@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roje Alasdair</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:     #1c1b1a;
+    --surface:#222120;
+    --ink:    #dedad2;
+    --soft:   #a09a92;
+    --faint:  #2e2d2b;
+    --accent: #6ec9a4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.4s;
+  }
+  nav.scrolled { border-bottom-color: var(--faint); }
+
+  .logo {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* LAYOUT */
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 52px; }
+
+  /* HERO */
+  #hero {
+    padding-top: 188px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid var(--faint);
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--soft);
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: clamp(48px, 6.5vw, 82px);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 36px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-bio {
+    max-width: 460px;
+    color: var(--soft);
+    line-height: 2.1;
+    margin-bottom: 44px;
+    font-size: 13px;
+  }
+
+  .hero-actions { display: flex; align-items: center; gap: 28px; }
+
+  .btn {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 11px 22px;
+    background: var(--accent);
+    color: #141414;
+    font-weight: 400;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.75; }
+
+  .link-plain {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .link-plain:hover { color: var(--ink); }
+
+  /* SECTIONS */
+  section { padding: 88px 0; border-bottom: 1px solid var(--faint); }
+  section:last-of-type { border-bottom: none; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 44px;
+  }
+
+  .sec-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--soft);
+    padding-top: 6px;
+  }
+
+  h2 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 36px;
+    letter-spacing: -0.01em;
+  }
+  h2 em { font-style: italic; color: var(--accent); }
+
+  /* ABOUT */
+  .about-text p {
+    color: var(--soft);
+    line-height: 2.2;
+    margin-bottom: 16px;
+    font-size: 13px;
+  }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-text b { color: var(--ink); font-weight: 400; }
+
+  /* SKILLS */
+  .skill-block { margin-bottom: 32px; }
+  .skill-block:last-child { margin-bottom: 0; }
+  .skill-cat {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--soft);
+    border: 1px solid var(--faint);
+    padding: 5px 12px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .tag:hover { border-color: var(--soft); color: var(--ink); }
+
+  /* PROJECTS */
+  .project {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 44px;
+    padding: 30px 0;
+    border-top: 1px solid var(--faint);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.25s;
+  }
+  .project:first-child { border-top: none; padding-top: 0; }
+  .project:hover { opacity: 0.55; }
+
+  .p-num { font-size: 10px; color: var(--soft); padding-top: 3px; letter-spacing: 0.12em; }
+
+  .p-title {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 21px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    letter-spacing: -0.01em;
+  }
+  .p-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--soft);
+    text-transform: uppercase;
+  }
+  .p-desc { color: var(--soft); line-height: 2; font-size: 12px; }
+
+  /* LABEL */
+  .label-copy h3 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 26px;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+  .label-copy p { color: var(--soft); line-height: 2.2; margin-bottom: 14px; max-width: 500px; font-size: 13px; }
+
+  .live {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--soft);
+    margin-top: 6px;
+  }
+  .live-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2.8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+  .label-link {
+    display: inline-block;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+  }
+  .label-link:hover { opacity: 0.55; }
+
+  /* CONTACT */
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    border-top: 1px solid var(--faint);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+  .contact-row:first-child { border-top: none; padding-top: 0; }
+  .contact-row:hover { opacity: 0.45; }
+
+  .c-name {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--ink);
+  }
+  .c-handle { font-size: 10px; letter-spacing: 0.1em; color: var(--soft); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--faint);
+    padding: 32px 52px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+  footer p { font-size: 10px; letter-spacing: 0.08em; color: var(--soft); }
+
+  /* REVEAL */
+  .r {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .r.in { opacity: 1; transform: none; }
+
+  /* MOBILE */
+  @media (max-width: 620px) {
+    nav { padding: 18px 24px; }
+    .nav-links { display: none; }
+    .wrap { padding: 0 24px; }
+    #hero { padding-top: 120px; }
+    .grid, .project { grid-template-columns: 1fr; gap: 10px; }
+    footer { padding: 24px; flex-direction: column; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="logo">Roje Alasdair</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#label">777heaven Records</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <section id="hero">
+    <p class="eyebrow">PUP Manila · BSIT · Manila, Philippines</p>
+    <h1>
+      Roje<br>
+      <em>Alasdair</em><br>
+      Evangelista
+    </h1>
+    <p class="hero-bio">
+      I'm studying networking and slowly getting pulled deeper into cybersecurity.<br>
+      On the side I run an independent record label called 777heaven Records.<br>
+      Both things started the same way: I saw something missing and tried to fix it.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="#projects">See my work</a>
+      <a class="link-plain" href="https://github.com/AlasdairDev" target="_blank">GitHub ↗</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="grid r">
+      <span class="sec-label">About</span>
+      <div>
+        <h2>Who I am</h2>
+        <div class="about-text">
+          <p>BSIT student at <b>PUP Manila</b>. My main focus right now is <b>network engineering</b> but the more I learn the more I want to go deeper into <b>cybersecurity</b>. Still figuring out where exactly I want to land. For now I just keep showing up and learning what I can.</p>
+          <p><b>Linux</b> is genuinely my favorite thing. The terminal feels more natural to me than any GUI. I use Nmap, Wireshark, Metasploit, Burp Suite not because they're on a list somewhere but because I actually find this stuff interesting to dig into.</p>
+          <p>I also started <b>777heaven Records</b> which is its own thing entirely. I love music and I wanted to build something real around it. It has a website, a pitch submission portal, the whole structure. Same kind of thinking, just a completely different world.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="grid r">
+      <span class="sec-label">Skills</span>
+      <div>
+        <h2>What I work with</h2>
+        <div class="skill-block">
+          <div class="skill-cat">Networking</div>
+          <div class="tags">
+            <span class="tag">TCP/IP</span>
+            <span class="tag">Routing & Switching</span>
+            <span class="tag">VLAN</span>
+            <span class="tag">Subnetting</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-cat">Cybersecurity</div>
+          <div class="tags">
+            <span class="tag">Nmap</span>
+            <span class="tag">Wireshark</span>
+            <span class="tag">Metasploit</span>
+            <span class="tag">Burp Suite</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <div class="skill-cat">Development</div>
+          <div class="tags">
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Linux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="grid r" style="margin-bottom: 48px;">
+      <span class="sec-label">Work</span>
+      <h2>Things I've built</h2>
+    </div>
+    <div class="r">
+      <a class="project" href="https://github.com/AlasdairDev/WUBlock" target="_blank">
+        <span class="p-num">01</span>
+        <div>
+          <div class="p-title">WUBlock <span class="p-tag">Windows · Utility</span></div>
+          <p class="p-desc">A utility that blocks Windows from forcing updates on you. I got tired of it happening at bad times so I built something to stop it.</p>
+        </div>
+      </a>
+      <a class="project" href="https://github.com/AlasdairDev/DormBound" target="_blank">
+        <span class="p-num">02</span>
+        <div>
+          <div class="p-title">DormBound <span class="p-tag">Networking</span></div>
+          <p class="p-desc">A project focused on improving network performance inside a dormitory setup. Practical problem, learned a lot building it.</p>
+        </div>
+      </a>
+      <a class="project" href="https://github.com/AlasdairDev/777heaven-records" target="_blank">
+        <span class="p-num">03</span>
+        <div>
+          <div class="p-title">777heaven Records <span class="p-tag">Web</span></div>
+          <p class="p-desc">The main website for 777heaven Records. Artist roster, EPKs, and the full brand identity all in one place.</p>
+        </div>
+      </a>
+      <a class="project" href="https://github.com/AlasdairDev/777hvnrx-pitchingform" target="_blank">
+        <span class="p-num">04</span>
+        <div>
+          <div class="p-title">777HVN Pitch Portal <span class="p-tag">Web · Form</span></div>
+          <p class="p-desc">A submission form so artists can send pitches directly to the label. Wanted something simple that actually works.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="label">
+    <div class="grid r">
+      <span class="sec-label">Label</span>
+      <div>
+        <h2>777heaven<br><em>Records</em></h2>
+        <div class="label-copy">
+          <h3>Something I built because I wanted it to exist.</h3>
+          <p>777heaven Records is an independent label I started from scratch. A lot of artists I came across were talented but had no real support around them, no proper EPK, no brand, nothing. I thought I could help with that.</p>
+          <p>It has a real website, a pitch portal, and a growing roster. I handle the infrastructure side of it the same way I think about tech: keep it clean and make sure it actually does what it's supposed to do.</p>
+          <div class="live"><div class="live-dot"></div>Open for submissions</div>
+          <br>
+          <a class="label-link" href="https://bit.ly/4lzMbVU" target="_blank">Submit a Demo ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="grid r" style="margin-bottom: 48px;">
+      <span class="sec-label">Contact</span>
+      <h2>Say hello</h2>
+    </div>
+    <div class="r">
+      <a class="contact-row" href="https://www.linkedin.com/in/roje-alasdair-evangelista-00630b291/" target="_blank">
+        <span class="c-name">LinkedIn</span>
+        <span class="c-handle">Roje Alasdair Evangelista ↗</span>
+      </a>
+      <a class="contact-row" href="https://github.com/AlasdairDev" target="_blank">
+        <span class="c-name">GitHub</span>
+        <span class="c-handle">AlasdairDev ↗</span>
+      </a>
+      <a class="contact-row" href="https://www.facebook.com/777hvnrecords" target="_blank">
+        <span class="c-name">777heaven Records</span>
+        <span class="c-handle">@777hvnrx ↗</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>Roje Alasdair Evangelista</p>
+  <p>© 2024</p>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.r').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
