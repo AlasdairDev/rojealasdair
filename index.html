@@ -3,503 +3,1144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roje Alasdair</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Roje Alasdair — BSIT / Cybersecurity / Manila</title>
+<meta name="description" content="Roje Alasdair Evangelista. BSIT student at PUP Manila pursuing cybersecurity through network engineering. Also runs 777heaven Records, an independent DIY label in Manila.">
+<meta name="author" content="Roje Alasdair Evangelista">
+<meta name="keywords" content="Roje Alasdair, Evangelista, PUP Manila, BSIT, cybersecurity, network engineering, 777heaven Records, Manila, portfolio">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0d0c0b">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Roje Alasdair Evangelista">
+<meta property="og:description" content="BSIT student at PUP Manila pursuing cybersecurity. Also runs 777heaven Records, an independent DIY label in Manila.">
+<meta property="og:url" content="https://alasdairdev.github.io">
+<meta property="og:site_name" content="Roje Alasdair Evangelista">
+<meta property="og:locale" content="en_PH">
+
+<!-- Twitter/X -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Roje Alasdair Evangelista">
+<meta name="twitter:description" content="BSIT student at PUP Manila pursuing cybersecurity. Also runs 777heaven Records.">
+
+<!-- Favicon — SVG inline, no extra file needed -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0c0b'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='20' font-weight='bold' fill='%237ecfb3'>R</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0c0b'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='20' font-weight='bold' fill='%237ecfb3'>R</text></svg>">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Barlow+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg:     #1c1b1a;
-    --surface:#222120;
-    --ink:    #dedad2;
-    --soft:   #a09a92;
-    --faint:  #2e2d2b;
-    --accent: #6ec9a4;
-  }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+/* ── TOKENS ───────────────────────────────────────────── */
+:root {
+  --void:    #0d0c0b;
+  --deep:    #131211;
+  --surface: #1a1917;
+  --rule:    rgba(255,248,230,0.11);
+  --dim:     rgba(255,248,230,0.55);
+  --mid:     rgba(255,248,230,0.82);
+  --cream:   #f8f4ec;
+  --burn:    #7ecfb3;   /* seafoam */
+  --burn2:   rgba(126,207,179,0.10);
+}
 
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'DM Mono', monospace;
-    font-weight: 300;
-    font-size: 13px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
+/* ── RESET ────────────────────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 24px 52px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--bg);
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.4s;
-  }
-  nav.scrolled { border-bottom-color: var(--faint); }
+body {
+  background: var(--void);
+  color: var(--cream);
+  font-family: 'DM Mono', monospace;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
 
-  .logo {
-    font-family: 'Lora', serif;
-    font-weight: 400;
-    font-size: 17px;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: 0.01em;
-  }
+/* ── NOISE / GRAIN LAYER ──────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
 
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--soft);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--ink); }
+/* ── HORIZONTAL SCAN LINES ────────────────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 8999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,0,0,0.07) 3px,
+    rgba(0,0,0,0.07) 4px
+  );
+}
 
-  /* LAYOUT */
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 52px; }
+/* ── NAV ──────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 48px;
+  border-bottom: 1px solid var(--rule);
+  background: rgba(13,12,11,0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
 
-  /* HERO */
-  #hero {
-    padding-top: 188px;
-    padding-bottom: 100px;
-    border-bottom: 1px solid var(--faint);
-  }
+.nav-mark {
+  font-family: 'Anton', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--cream);
+  text-decoration: none;
+  opacity: 0.9;
+}
 
-  .eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--soft);
-    margin-bottom: 28px;
-  }
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-decoration: none;
+  padding: 0 16px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid var(--rule);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cream); }
 
-  h1 {
-    font-family: 'Lora', serif;
-    font-weight: 400;
-    font-size: clamp(48px, 6.5vw, 82px);
-    line-height: 1.0;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin-bottom: 36px;
-  }
-  h1 em {
-    font-style: italic;
-    color: var(--accent);
-  }
+/* ── HERO ─────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
 
-  .hero-bio {
-    max-width: 460px;
-    color: var(--soft);
-    line-height: 2.1;
-    margin-bottom: 44px;
-    font-size: 13px;
-  }
+/* ghost overprint behind name — feels silkscreened */
+.hero-overprint {
+  position: absolute;
+  top: 48px; left: -4px;
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(120px, 18vw, 240px);
+  line-height: 0.85;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(126,207,179,0.12);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
 
-  .hero-actions { display: flex; align-items: center; gap: 28px; }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 72px 48px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .btn {
-    display: inline-block;
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 11px 22px;
-    background: var(--accent);
-    color: #141414;
-    font-weight: 400;
-    transition: opacity 0.2s;
-  }
-  .btn:hover { opacity: 0.75; }
+/* location stamp top-right */
+.hero-stamp {
+  position: absolute;
+  top: 78px; right: 48px;
+  text-align: right;
+  z-index: 3;
+}
+.hero-stamp p {
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--dim);
+  line-height: 2;
+}
+.hero-stamp .stamp-year {
+  font-family: 'Anton', sans-serif;
+  font-size: 32px;
+  color: rgba(255,248,230,0.06);
+  letter-spacing: 0.04em;
+  display: block;
+  margin-top: 4px;
+  line-height: 1;
+}
 
-  .link-plain {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--soft);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .link-plain:hover { color: var(--ink); }
+/* name block */
+.hero-name {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(80px, 14vw, 200px);
+  line-height: 0.87;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  margin-top: 16px;
+}
+.hero-name .n-burn { color: var(--burn); }
+.hero-name .n-dim {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,248,230,0.18);
+}
 
-  /* SECTIONS */
-  section { padding: 88px 0; border-bottom: 1px solid var(--faint); }
-  section:last-of-type { border-bottom: none; }
+/* ruled divider — looks hand-drawn */
+.hero-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--dim);
+  margin: 44px 0 36px;
+  position: relative;
+}
+.hero-rule::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: 0;
+  width: 40%;
+  height: 1px;
+  background: var(--burn);
+  opacity: 0.6;
+}
 
-  .grid {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 44px;
-  }
+/* duality block — the core of the hero */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-bottom: 64px;
+}
 
-  .sec-label {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--soft);
-    padding-top: 6px;
-  }
+.split-side {
+  padding: 28px 0;
+  position: relative;
+}
+.split-side:first-child {
+  padding-right: 48px;
+  border-right: 1px solid var(--rule);
+}
+.split-side:last-child {
+  padding-left: 48px;
+}
 
-  h2 {
-    font-family: 'Lora', serif;
-    font-weight: 400;
-    font-size: clamp(28px, 3.5vw, 42px);
-    line-height: 1.1;
-    color: var(--ink);
-    margin-bottom: 36px;
-    letter-spacing: -0.01em;
-  }
-  h2 em { font-style: italic; color: var(--accent); }
+.split-label {
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--burn);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.split-label::before {
+  content: '';
+  width: 16px; height: 1px;
+  background: var(--burn);
+  display: block;
+}
 
-  /* ABOUT */
-  .about-text p {
-    color: var(--soft);
-    line-height: 2.2;
-    margin-bottom: 16px;
-    font-size: 13px;
-  }
-  .about-text p:last-child { margin-bottom: 0; }
-  .about-text b { color: var(--ink); font-weight: 400; }
+.split-head {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
 
-  /* SKILLS */
-  .skill-block { margin-bottom: 32px; }
-  .skill-block:last-child { margin-bottom: 0; }
-  .skill-cat {
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink);
-    margin-bottom: 12px;
-  }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag {
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    color: var(--soft);
-    border: 1px solid var(--faint);
-    padding: 5px 12px;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .tag:hover { border-color: var(--soft); color: var(--ink); }
+.split-body {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 2;
+  max-width: 360px;
+}
+.split-body b { color: var(--cream); font-weight: 400; }
 
-  /* PROJECTS */
-  .project {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 44px;
-    padding: 30px 0;
-    border-top: 1px solid var(--faint);
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.25s;
-  }
-  .project:first-child { border-top: none; padding-top: 0; }
-  .project:hover { opacity: 0.55; }
+/* hero bottom row */
+.hero-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  border-top: 1px solid var(--rule);
+  margin-top: auto;
+}
 
-  .p-num { font-size: 10px; color: var(--soft); padding-top: 3px; letter-spacing: 0.12em; }
+.hero-cta {
+  display: flex;
+  gap: 0;
+}
+.cta-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 11px 22px;
+  border: 1px solid rgba(255,248,230,0.2);
+  color: var(--mid);
+  background: transparent;
+  transition: all 0.15s;
+  display: inline-block;
+}
+.cta-btn:hover { border-color: var(--cream); color: var(--cream); }
+.cta-btn.primary {
+  background: var(--burn);
+  border-color: var(--burn);
+  color: var(--cream);
+}
+.cta-btn.primary:hover { background: #5bbfa0; border-color: #5bbfa0; }
+.cta-btn + .cta-btn { border-left: none; }
 
-  .p-title {
-    font-family: 'Lora', serif;
-    font-weight: 400;
-    font-size: 21px;
-    color: var(--ink);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    letter-spacing: -0.01em;
-  }
-  .p-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    color: var(--soft);
-    text-transform: uppercase;
-  }
-  .p-desc { color: var(--soft); line-height: 2; font-size: 12px; }
+.hero-meta {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
 
-  /* LABEL */
-  .label-copy h3 {
-    font-family: 'Lora', serif;
-    font-weight: 400;
-    font-size: 26px;
-    font-style: italic;
-    color: var(--ink);
-    margin-bottom: 18px;
-    line-height: 1.2;
-  }
-  .label-copy p { color: var(--soft); line-height: 2.2; margin-bottom: 14px; max-width: 500px; font-size: 13px; }
+/* ── SECTION WRAPPER ──────────────────────────────────── */
+.section {
+  border-top: 1px solid var(--rule);
+  padding: 80px 48px;
+  position: relative;
+}
 
-  .live {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--soft);
-    margin-top: 6px;
-  }
-  .live-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse 2.8s ease-in-out infinite;
-  }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--burn);
+  margin-bottom: 52px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.section-label span { color: var(--mid); }
 
-  .label-link {
-    display: inline-block;
-    margin-top: 22px;
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent);
-    padding-bottom: 2px;
-    transition: opacity 0.2s;
-  }
-  .label-link:hover { opacity: 0.55; }
+/* section number — huge ghost behind heading */
+.s-bg-num {
+  position: absolute;
+  top: 40px;
+  right: 48px;
+  font-family: 'Anton', sans-serif;
+  font-size: 180px;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,248,230,0.03);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.04em;
+}
 
-  /* CONTACT */
-  .contact-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 0;
-    border-top: 1px solid var(--faint);
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.2s;
-  }
-  .contact-row:first-child { border-top: none; padding-top: 0; }
-  .contact-row:hover { opacity: 0.45; }
+/* ── ABOUT ────────────────────────────────────────────── */
+#about .about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
 
-  .c-name {
-    font-family: 'Lora', serif;
-    font-weight: 400;
-    font-size: 20px;
-    color: var(--ink);
-  }
-  .c-handle { font-size: 10px; letter-spacing: 0.1em; color: var(--soft); }
+.about-heading {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: var(--cream);
+  margin-bottom: 36px;
+}
+.about-heading .burn { color: var(--burn); }
 
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--faint);
-    padding: 32px 52px;
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
-  }
-  footer p { font-size: 10px; letter-spacing: 0.08em; color: var(--soft); }
+.about-text p {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 2.1;
+  margin-bottom: 18px;
+}
+.about-text p:last-child { margin-bottom: 0; }
+.about-text b { color: var(--cream); font-weight: 400; }
 
-  /* REVEAL */
-  .r {
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .r.in { opacity: 1; transform: none; }
+/* right: beliefs list */
+.beliefs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+.belief {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 20px;
+}
+.belief:first-child { border-top: 1px solid var(--rule); }
+.b-num {
+  font-size: 9px;
+  color: var(--burn);
+  letter-spacing: 0.1em;
+  padding-top: 1px;
+}
+.b-title {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+.b-text { font-size: 11px; color: var(--mid); line-height: 1.9; }
 
-  /* MOBILE */
-  @media (max-width: 620px) {
-    nav { padding: 18px 24px; }
-    .nav-links { display: none; }
-    .wrap { padding: 0 24px; }
-    #hero { padding-top: 120px; }
-    .grid, .project { grid-template-columns: 1fr; gap: 10px; }
-    footer { padding: 24px; flex-direction: column; gap: 6px; }
-  }
+/* ── SKILLS ───────────────────────────────────────────── */
+#skills .skills-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+}
+
+.skill-group {
+  padding: 36px 32px;
+  border-right: 1px solid var(--rule);
+  position: relative;
+  overflow: hidden;
+}
+.skill-group:last-child { border-right: none; }
+
+/* overprint group name */
+.skill-group::before {
+  content: attr(data-bg);
+  position: absolute;
+  bottom: -12px; right: -8px;
+  font-family: 'Anton', sans-serif;
+  font-size: 64px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,248,230,0.04);
+  pointer-events: none;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.sg-title {
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--burn);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.sg-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.sg-list li {
+  font-size: 11px;
+  color: var(--mid);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,248,230,0.03);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.15s;
+  cursor: default;
+}
+.sg-list li:last-child { border-bottom: none; }
+.sg-list li:hover { color: var(--cream); }
+.sg-list li::before {
+  content: '';
+  width: 3px; height: 3px;
+  background: var(--burn);
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+.sg-list li:hover::before { opacity: 1; }
+
+/* ── PROJECTS ─────────────────────────────────────────── */
+#projects .proj-intro {
+  max-width: 520px;
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 2;
+  margin-bottom: 56px;
+}
+
+.proj-list { display: flex; flex-direction: column; }
+
+.proj-item {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: start;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  padding: 32px 0;
+  position: relative;
+  transition: background 0.2s;
+}
+.proj-item:hover { background: var(--burn2); }
+.proj-item:hover::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--burn);
+}
+
+.proj-num {
+  font-family: 'Anton', sans-serif;
+  font-size: 13px;
+  color: var(--dim);
+  letter-spacing: 0.08em;
+  padding-top: 4px;
+  padding-left: 10px;
+  transition: color 0.2s;
+  position: relative;
+  z-index: 1;
+}
+.proj-item:hover .proj-num { color: var(--burn); }
+
+.proj-body { padding-right: 40px; }
+
+.proj-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, 2.8vw, 32px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+.proj-item:hover .proj-title { color: var(--cream); }
+
+.proj-desc {
+  font-size: 11px;
+  color: var(--mid);
+  line-height: 1.9;
+  max-width: 560px;
+}
+
+.proj-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.proj-tag {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dim);
+  border: 1px solid var(--rule);
+  padding: 3px 8px;
+}
+
+.proj-arrow {
+  font-size: 14px;
+  color: var(--dim);
+  padding-top: 4px;
+  transition: color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+.proj-item:hover .proj-arrow {
+  color: var(--burn);
+  transform: translate(3px, -3px);
+}
+
+/* ── LABEL ────────────────────────────────────────────── */
+#label {
+  background: var(--deep);
+}
+
+#label .label-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 80px;
+  align-items: start;
+}
+
+.label-heading {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(56px, 8vw, 108px);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+.label-heading .sub-line {
+  display: block;
+  font-size: 0.38em;
+  letter-spacing: 0.14em;
+  color: var(--dim);
+}
+
+.label-rule {
+  width: 48px; height: 2px;
+  background: var(--burn);
+  margin: 28px 0;
+}
+
+.label-text p {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 2.1;
+  margin-bottom: 14px;
+  max-width: 460px;
+}
+.label-text b { color: var(--cream); font-weight: 400; }
+
+.label-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mid);
+  margin-top: 12px;
+}
+.ldot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--burn);
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+.label-cta {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 22px;
+  border: 1px solid var(--burn);
+  color: var(--burn);
+  transition: background 0.15s, color 0.15s;
+}
+.label-cta:hover { background: var(--burn); color: var(--cream); }
+
+/* label sidebar */
+.label-sidebar {
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.ls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--rule);
+}
+.ls-row:last-child { border-bottom: none; }
+.ls-key {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.ls-val { font-size: 11px; color: var(--mid); }
+.ls-val.live { color: var(--burn); }
+
+/* ── LABEL SERVICES ──────────────────────────────────── */
+.label-services-head {
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--burn);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.lsvc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+}
+.lsvc-item {
+  padding: 32px 28px;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+  transition: background 0.2s;
+}
+.lsvc-item:nth-child(3n) { border-right: none; }
+.lsvc-item:nth-child(4),
+.lsvc-item:nth-child(5),
+.lsvc-item:nth-child(6) { border-bottom: none; }
+.lsvc-item:hover { background: var(--burn2); }
+.lsvc-num {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--burn);
+  margin-bottom: 14px;
+  opacity: 0.7;
+}
+.lsvc-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+.lsvc-body {
+  font-size: 11px;
+  color: var(--mid);
+  line-height: 1.9;
+}
+@media (max-width: 680px) {
+  .lsvc-grid { grid-template-columns: 1fr; }
+  .lsvc-item { border-right: none; border-bottom: 1px solid var(--rule); }
+  .lsvc-item:last-child { border-bottom: none; }
+}
+
+/* ── CONTACT ──────────────────────────────────────────── */
+#contact .contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-heading {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+  margin-bottom: 24px;
+}
+.contact-sub {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 2;
+  max-width: 340px;
+}
+
+.contact-links { display: flex; flex-direction: column; }
+
+.c-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  gap: 20px;
+  position: relative;
+  transition: padding-left 0.2s;
+}
+.c-link:first-child { border-top: 1px solid var(--rule); }
+.c-link:hover { padding-left: 12px; }
+.c-link::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0;
+  background: var(--burn);
+  transition: width 0.2s;
+}
+.c-link:hover::before { width: 2px; }
+
+.cl-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cream);
+  transition: color 0.2s;
+}
+.c-link:hover .cl-name { color: var(--burn); }
+
+.cl-handle { font-size: 9px; letter-spacing: 0.12em; color: var(--dim); }
+.cl-arrow { font-size: 14px; color: var(--dim); transition: color 0.2s, transform 0.2s; flex-shrink: 0; }
+.c-link:hover .cl-arrow { color: var(--burn); transform: translate(3px,-3px); }
+
+/* ── FOOTER ───────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer p {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.footer-burn { color: var(--burn); }
+
+/* ── REVEAL ───────────────────────────────────────────── */
+.r { opacity:0; transform:translateY(18px); transition:opacity 0.75s ease, transform 0.75s ease; }
+.r.in { opacity:1; transform:none; }
+.r2 { transition-delay: 0.1s; }
+.r3 { transition-delay: 0.2s; }
+
+/* ── MOBILE ───────────────────────────────────────────── */
+@media (max-width: 680px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero-content { padding: 40px 20px 0; }
+  .hero-bottom { padding: 16px 20px; flex-direction: column; gap: 14px; align-items: flex-start; }
+  .hero-split { grid-template-columns: 1fr; }
+  .split-side:first-child { padding-right: 0; border-right: none; border-bottom: 1px solid var(--rule); padding-bottom: 28px; }
+  .split-side:last-child { padding-left: 0; padding-top: 28px; }
+  .section { padding: 56px 20px; }
+  #about .about-layout { grid-template-columns: 1fr; gap: 40px; }
+  #skills .skills-layout { grid-template-columns: 1fr; }
+  .skill-group { border-right: none; border-bottom: 1px solid var(--rule); }
+  .proj-item { grid-template-columns: 36px 1fr 24px; }
+  #label .label-layout { grid-template-columns: 1fr; gap: 40px; }
+  #contact .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+  footer { padding: 20px; flex-direction: column; gap: 6px; text-align: center; }
+  .hero-stamp { display: none; }
+  .s-bg-num { display: none; }
+}
 </style>
 </head>
 <body>
 
-<nav id="nav">
-  <a href="#" class="logo">Roje Alasdair</a>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-mark">R·A·E</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Work</a></li>
-    <li><a href="#label">777heaven Records</a></li>
+    <li><a href="#label">Label</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<div class="wrap">
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-overprint" aria-hidden="true">ROJE<br>ALASDAIR</div>
 
-  <section id="hero">
-    <p class="eyebrow">PUP Manila · BSIT · Manila, Philippines</p>
-    <h1>
-      Roje<br>
-      <em>Alasdair</em><br>
-      Evangelista
-    </h1>
-    <p class="hero-bio">
-      I'm studying networking and slowly getting pulled deeper into cybersecurity.<br>
-      On the side I run an independent record label called 777heaven Records.<br>
-      Both things started the same way: I saw something missing and tried to fix it.
-    </p>
-    <div class="hero-actions">
-      <a class="btn" href="#projects">See my work</a>
-      <a class="link-plain" href="https://github.com/AlasdairDev" target="_blank">GitHub ↗</a>
+  <div class="hero-content">
+    <div class="hero-stamp" aria-hidden="true">
+      <p>PUP Manila</p>
+      <p>BSIT · Cybersecurity</p>
+      <p>Manila, PH</p>
+      <span class="stamp-year">2026</span>
     </div>
-  </section>
 
-  <section id="about">
-    <div class="grid r">
-      <span class="sec-label">About</span>
-      <div>
-        <h2>Who I am</h2>
-        <div class="about-text">
-          <p>BSIT student at <b>PUP Manila</b>. My main focus right now is <b>network engineering</b> but the more I learn the more I want to go deeper into <b>cybersecurity</b>. Still figuring out where exactly I want to land. For now I just keep showing up and learning what I can.</p>
-          <p><b>Linux</b> is genuinely my favorite thing. The terminal feels more natural to me than any GUI. I use Nmap, Wireshark, Metasploit, Burp Suite not because they're on a list somewhere but because I actually find this stuff interesting to dig into.</p>
-          <p>I also started <b>777heaven Records</b> which is its own thing entirely. I love music and I wanted to build something real around it. It has a website, a pitch submission portal, the whole structure. Same kind of thinking, just a completely different world.</p>
-        </div>
+    <div>
+      <h1 class="hero-name r">
+        <span class="n-burn">ROJE</span><br>
+        ALASDAIR<br>
+        <span class="n-dim">EVANGELISTA</span>
+      </h1>
+    </div>
+
+    <div class="hero-rule r r2" aria-hidden="true"></div>
+
+    <div class="hero-split r r3">
+      <div class="split-side">
+        <p class="split-label">I</p>
+        <h2 class="split-head">BSIT<br>STUDENT<br>→ CYBERSEC</h2>
+        <p class="split-body">
+          BSIT student at <b>PUP Manila</b>, pursuing <b>cybersecurity</b> through network engineering. I use Nmap, Wireshark, Metasploit, and Burp Suite because I actually find this stuff interesting. Not because it's on a syllabus.
+        </p>
+      </div>
+      <div class="split-side">
+        <p class="split-label">II</p>
+        <h2 class="split-head">RUNS AN<br>INDEPENDENT<br>RECORD LABEL</h2>
+        <p class="split-body">
+          Founded <b>777heaven Records</b> because talented artists had no infrastructure around them. Built it the same way I build everything: kept it clean and made sure it actually works.
+        </p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section id="skills">
-    <div class="grid r">
-      <span class="sec-label">Skills</span>
-      <div>
-        <h2>What I work with</h2>
-        <div class="skill-block">
-          <div class="skill-cat">Networking</div>
-          <div class="tags">
-            <span class="tag">TCP/IP</span>
-            <span class="tag">Routing & Switching</span>
-            <span class="tag">VLAN</span>
-            <span class="tag">Subnetting</span>
-          </div>
-        </div>
-        <div class="skill-block">
-          <div class="skill-cat">Cybersecurity</div>
-          <div class="tags">
-            <span class="tag">Nmap</span>
-            <span class="tag">Wireshark</span>
-            <span class="tag">Metasploit</span>
-            <span class="tag">Burp Suite</span>
-          </div>
-        </div>
-        <div class="skill-block">
-          <div class="skill-cat">Development</div>
-          <div class="tags">
-            <span class="tag">HTML / CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Python</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">Bash</span>
-            <span class="tag">Linux</span>
-          </div>
-        </div>
+  <div class="hero-bottom">
+    <div class="hero-cta">
+      <a class="cta-btn primary" href="#projects">See my work</a>
+      <a class="cta-btn" href="https://github.com/AlasdairDev" target="_blank">GitHub ↗</a>
+    </div>
+    <p class="hero-meta">Open for opportunities</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <span class="s-bg-num" aria-hidden="true">01</span>
+  <p class="section-label r"><span>01 /</span> About</p>
+  <div class="about-layout r">
+    <div>
+      <h2 class="about-heading">WHO<br>I AM<br><span class="burn">EXACTLY.</span></h2>
+      <div class="about-text">
+        <p>BSIT student at <b>PUP Manila</b>. My path is <b>network engineering</b> as the foundation, with <b>cybersecurity</b> as the goal. Still building toward it. For now I just keep showing up and learning what I can.</p>
+        <p><b>Linux</b> is genuinely my favorite thing. The terminal feels more natural to me than any GUI. I dig into tools because I'm curious, not because I'm building a resume.</p>
+        <p>I also run <b>777heaven Records</b>. Completely different world, same kind of thinking. See what's missing, build something to fix it.</p>
       </div>
     </div>
-  </section>
-
-  <section id="projects">
-    <div class="grid r" style="margin-bottom: 48px;">
-      <span class="sec-label">Work</span>
-      <h2>Things I've built</h2>
-    </div>
-    <div class="r">
-      <a class="project" href="https://github.com/AlasdairDev/WUBlock" target="_blank">
-        <span class="p-num">01</span>
-        <div>
-          <div class="p-title">WUBlock <span class="p-tag">Windows · Utility</span></div>
-          <p class="p-desc">A utility that blocks Windows from forcing updates on you. I got tired of it happening at bad times so I built something to stop it.</p>
-        </div>
-      </a>
-      <a class="project" href="https://github.com/AlasdairDev/DormBound" target="_blank">
-        <span class="p-num">02</span>
-        <div>
-          <div class="p-title">DormBound <span class="p-tag">Networking</span></div>
-          <p class="p-desc">A project focused on improving network performance inside a dormitory setup. Practical problem, learned a lot building it.</p>
-        </div>
-      </a>
-      <a class="project" href="https://github.com/AlasdairDev/777heaven-records" target="_blank">
-        <span class="p-num">03</span>
-        <div>
-          <div class="p-title">777heaven Records <span class="p-tag">Web</span></div>
-          <p class="p-desc">The main website for 777heaven Records. Artist roster, EPKs, and the full brand identity all in one place.</p>
-        </div>
-      </a>
-      <a class="project" href="https://github.com/AlasdairDev/777hvnrx-pitchingform" target="_blank">
-        <span class="p-num">04</span>
-        <div>
-          <div class="p-title">777HVN Pitch Portal <span class="p-tag">Web · Form</span></div>
-          <p class="p-desc">A submission form so artists can send pitches directly to the label. Wanted something simple that actually works.</p>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section id="label">
-    <div class="grid r">
-      <span class="sec-label">Label</span>
-      <div>
-        <h2>777heaven<br><em>Records</em></h2>
-        <div class="label-copy">
-          <h3>Something I built because I wanted it to exist.</h3>
-          <p>777heaven Records is an independent label I started from scratch. A lot of artists I came across were talented but had no real support around them, no proper EPK, no brand, nothing. I thought I could help with that.</p>
-          <p>It has a real website, a pitch portal, and a growing roster. I handle the infrastructure side of it the same way I think about tech: keep it clean and make sure it actually does what it's supposed to do.</p>
-          <div class="live"><div class="live-dot"></div>Open for submissions</div>
-          <br>
-          <a class="label-link" href="https://bit.ly/4lzMbVU" target="_blank">Submit a Demo ↗</a>
-        </div>
+    <div class="beliefs">
+      <div class="belief">
+        <span class="b-num">01</span>
+        <div><p class="b-title">Linux first</p><p class="b-text">The terminal is home. No GUI needed. Closer to the machine, closer to understanding it.</p></div>
+      </div>
+      <div class="belief">
+        <span class="b-num">02</span>
+        <div><p class="b-title">Build to understand</p><p class="b-text">I start projects to learn, not to ship. If I understand it I can fix it. If I can fix it I can own it.</p></div>
+      </div>
+      <div class="belief">
+        <span class="b-num">03</span>
+        <div><p class="b-title">Two worlds, one brain</p><p class="b-text">Tech and music aren't opposites. Both are about gaps, structure, and making something that didn't exist before.</p></div>
+      </div>
+      <div class="belief">
+        <span class="b-num">04</span>
+        <div><p class="b-title">Still figuring it out</p><p class="b-text">Networking → cybersecurity. No destination locked. The only strategy is showing up.</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contact">
-    <div class="grid r" style="margin-bottom: 48px;">
-      <span class="sec-label">Contact</span>
-      <h2>Say hello</h2>
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <span class="s-bg-num" aria-hidden="true">02</span>
+  <p class="section-label r"><span>02 /</span> Skills</p>
+  <div class="skills-layout r">
+    <div class="skill-group" data-bg="NET">
+      <p class="sg-title">Networking</p>
+      <ul class="sg-list">
+        <li>TCP/IP</li>
+        <li>Routing &amp; Switching</li>
+        <li>VLAN</li>
+        <li>Subnetting</li>
+      </ul>
     </div>
-    <div class="r">
-      <a class="contact-row" href="https://www.linkedin.com/in/roje-alasdair-evangelista-00630b291/" target="_blank">
-        <span class="c-name">LinkedIn</span>
-        <span class="c-handle">Roje Alasdair Evangelista ↗</span>
+    <div class="skill-group" data-bg="SEC">
+      <p class="sg-title">Cybersecurity</p>
+      <ul class="sg-list">
+        <li>Nmap</li>
+        <li>Wireshark</li>
+        <li>Metasploit</li>
+        <li>Burp Suite</li>
+      </ul>
+    </div>
+    <div class="skill-group" data-bg="DEV">
+      <p class="sg-title">Development</p>
+      <ul class="sg-list">
+        <li>HTML / CSS / JS</li>
+        <li>Python</li>
+        <li>MySQL</li>
+        <li>Bash</li>
+        <li>Linux</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <span class="s-bg-num" aria-hidden="true">03</span>
+  <p class="section-label r"><span>03 /</span> Work</p>
+  <p class="proj-intro r">Things I built because I needed them to exist. Not portfolio pieces. Real problems I ran into and decided to solve.</p>
+  <div class="proj-list r">
+    <a class="proj-item" href="https://github.com/AlasdairDev/WUBlock" target="_blank">
+      <span class="proj-num">01</span>
+      <div class="proj-body">
+        <p class="proj-title">WUBlock</p>
+        <p class="proj-desc">Windows kept forcing updates at the worst times. I got tired of it and built something to stop it.</p>
+        <div class="proj-tags"><span class="proj-tag">Windows</span><span class="proj-tag">Utility</span></div>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+    <a class="proj-item" href="https://github.com/AlasdairDev/DormBound" target="_blank">
+      <span class="proj-num">02</span>
+      <div class="proj-body">
+        <p class="proj-title">DormBound</p>
+        <p class="proj-desc">Network performance in a dorm is a real problem. Built this to understand and fix it. Learned a lot.</p>
+        <div class="proj-tags"><span class="proj-tag">Networking</span><span class="proj-tag">Infrastructure</span></div>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+    <a class="proj-item" href="https://github.com/AlasdairDev/777heaven-records" target="_blank">
+      <span class="proj-num">03</span>
+      <div class="proj-body">
+        <p class="proj-title">777heaven Records Website</p>
+        <p class="proj-desc">The main site for the label. Artist roster, EPKs, full brand identity. Built and maintained by me.</p>
+        <div class="proj-tags"><span class="proj-tag">Web</span><span class="proj-tag">HTML/CSS/JS</span></div>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+    <a class="proj-item" href="https://github.com/AlasdairDev/777hvnrx-pitchingform" target="_blank">
+      <span class="proj-num">04</span>
+      <div class="proj-body">
+        <p class="proj-title">777HVN Pitch Portal</p>
+        <p class="proj-desc">Artists needed a way to send demos directly to the label. Wanted it simple, wanted it to actually work.</p>
+        <div class="proj-tags"><span class="proj-tag">Web</span><span class="proj-tag">Form</span></div>
+      </div>
+      <span class="proj-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- LABEL -->
+<section id="label" class="section">
+  <span class="s-bg-num" aria-hidden="true">04</span>
+  <p class="section-label r"><span>04 /</span> 777heaven Records</p>
+
+  <div class="label-layout r">
+    <div>
+      <h2 class="label-heading">
+        777HEAVEN
+        <span class="sub-line">Records / Independent Label / Manila, PH</span>
+      </h2>
+      <div class="label-rule"></div>
+      <div class="label-text">
+        <p>Founded in 2024 as a <b>DIY indie label</b> in Manila, built by someone who understands the highs and lows of self-releasing. Rooted in underground music, built around <b>creative autonomy</b>.</p>
+        <p>We empower artists to retain <b>full creative control</b>. Every release is shaped through genuine collaboration. The final product always reflects the artist's true vision, without compromise.</p>
+        <p>More than a platform, we're a <b>community</b>. Through distribution, marketing, and a growing network, we help unique voices reach wider audiences while staying true to their roots.</p>
+      </div>
+      <div class="label-open" style="margin-top:24px"><div class="ldot"></div>Open for submissions</div>
+      <br>
+      <a class="label-cta" href="https://bit.ly/4lzMbVU" target="_blank">Submit a Demo ↗</a>
+    </div>
+    <div class="label-sidebar">
+      <div class="ls-row"><span class="ls-key">Founded</span><span class="ls-val">2024</span></div>
+      <div class="ls-row"><span class="ls-key">Location</span><span class="ls-val">Manila, PH</span></div>
+      <div class="ls-row"><span class="ls-key">Type</span><span class="ls-val">DIY Indie Label</span></div>
+      <div class="ls-row"><span class="ls-key">Status</span><span class="ls-val live">Active</span></div>
+      <div class="ls-row"><span class="ls-key">Submissions</span><span class="ls-val live">Open</span></div>
+      <div class="ls-row"><span class="ls-key">Distribution</span><span class="ls-val">Via ONErpm</span></div>
+      <div class="ls-row"><span class="ls-key">Facebook</span><span class="ls-val">@777hvnrecords</span></div>
+    </div>
+  </div>
+
+  <div class="label-services r" style="margin-top:72px">
+    <p class="label-services-head">What we offer</p>
+    <div class="lsvc-grid">
+      <div class="lsvc-item">
+        <span class="lsvc-num">01</span>
+        <p class="lsvc-title">Music Distribution</p>
+        <p class="lsvc-body">Your music on all major streaming platforms. Global reach, full creative control, no unnecessary barriers. DIY-friendly all the way.</p>
+      </div>
+      <div class="lsvc-item">
+        <span class="lsvc-num">02</span>
+        <p class="lsvc-title">Marketing Support</p>
+        <p class="lsvc-body">Social media strategies, content creation, audience growth. We help you build visibility and a strong fanbase without doing it blind.</p>
+      </div>
+      <div class="lsvc-item">
+        <span class="lsvc-num">03</span>
+        <p class="lsvc-title">Artist Support</p>
+        <p class="lsvc-body">Being independent doesn't mean doing it alone. Connect, collaborate, and learn with people who've navigated the same scene.</p>
+      </div>
+      <div class="lsvc-item">
+        <span class="lsvc-num">04</span>
+        <p class="lsvc-title">Release Management</p>
+        <p class="lsvc-body">Scheduling, metadata, quality checks: handled. Focus on the music. We make sure it ships on time and meets industry standards.</p>
+      </div>
+      <div class="lsvc-item">
+        <span class="lsvc-num">05</span>
+        <p class="lsvc-title">Transparent Reporting</p>
+        <p class="lsvc-body">Clear, timely updates on earnings, streams, and usage. No hidden metrics. Just the data you need to make smart moves.</p>
+      </div>
+      <div class="lsvc-item">
+        <span class="lsvc-num">06</span>
+        <p class="lsvc-title">ONErpm Dashboard</p>
+        <p class="lsvc-body">Direct access to ONErpm's professional dashboard for releases, analytics, and royalties. Track performance across platforms and monitor earnings in real time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <span class="s-bg-num" aria-hidden="true">05</span>
+  <p class="section-label r"><span>05 /</span> Contact</p>
+  <div class="contact-layout r">
+    <div>
+      <h2 class="contact-heading">LET'S<br>TALK.</h2>
+      <p class="contact-sub">I'm a student, not a startup. But I'm serious about what I build. Reach out if you want to connect.</p>
+    </div>
+    <div class="contact-links">
+      <a class="c-link" href="https://www.linkedin.com/in/roje-alasdair-evangelista-00630b291/" target="_blank">
+        <div>
+          <p class="cl-name">LinkedIn</p>
+          <p class="cl-handle">Roje Alasdair Evangelista</p>
+        </div>
+        <span class="cl-arrow">↗</span>
       </a>
-      <a class="contact-row" href="https://github.com/AlasdairDev" target="_blank">
-        <span class="c-name">GitHub</span>
-        <span class="c-handle">AlasdairDev ↗</span>
+      <a class="c-link" href="https://github.com/AlasdairDev" target="_blank">
+        <div>
+          <p class="cl-name">GitHub</p>
+          <p class="cl-handle">AlasdairDev</p>
+        </div>
+        <span class="cl-arrow">↗</span>
       </a>
-      <a class="contact-row" href="https://www.facebook.com/777hvnrecords" target="_blank">
-        <span class="c-name">777heaven Records</span>
-        <span class="c-handle">@777hvnrx ↗</span>
+      <a class="c-link" href="https://www.facebook.com/777hvnrecords" target="_blank">
+        <div>
+          <p class="cl-name">777heaven Records</p>
+          <p class="cl-handle">@777hvnrx</p>
+        </div>
+        <span class="cl-arrow">↗</span>
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
-</div>
-
+<!-- FOOTER -->
 <footer>
-  <p>Roje Alasdair Evangelista</p>
+  <p>Roje Alasdair Evangelista / <span class="footer-burn">Manila, PH</span></p>
   <p>© 2024</p>
 </footer>
 
 <script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 30);
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   });
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.07 });
-  document.querySelectorAll('.r').forEach(el => io.observe(el));
+}, { threshold: 0.06 });
+document.querySelectorAll('.r').forEach(el => io.observe(el));
 </script>
-
 </body>
 </html>
