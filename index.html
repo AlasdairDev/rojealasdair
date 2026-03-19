@@ -829,6 +829,96 @@ footer p {
   scroll-margin-top: 48px;
 }
 
+/* ── LAPTOP (1025px – 1380px) ───────────────────────────────
+   Typical 13"–15" screens: 1280×800, 1366×768, 1280×1024
+   Goal: tighter hero name, proportional padding, no overflow  */
+@media (min-width: 1025px) and (max-width: 1380px) {
+  /* Nav */
+  nav { padding: 0 40px; height: 48px; }
+  .nav-links a { padding: 0 14px; font-size: 11px; }
+
+  /* Hero — keep name visible + split below fold-free */
+  .hero-content { padding: 32px 40px 0; }
+  .hero-bottom { padding: 18px 40px; }
+  .hero-stamp { top: 68px; right: 40px; }
+  .hero-name { font-size: clamp(44px, 6vw, 88px); }
+  .hero-overprint { font-size: clamp(64px, 8.5vw, 120px); }
+  .hero-rule { margin: 28px 0 22px; }
+  .split-head { font-size: clamp(22px, 2.6vw, 36px); }
+  .split-body { font-size: 12px; line-height: 1.9; }
+  .split-side:first-child { padding-right: 36px; }
+  .split-side:last-child { padding-left: 36px; }
+  .hero-split { margin-bottom: 0; }
+
+  /* Sections */
+  .section { padding: 72px 40px; }
+  .s-bg-num { font-size: 140px; right: 40px; }
+  .section-label { margin-bottom: 40px; }
+
+  /* About */
+  #about .about-layout { gap: 56px; }
+  .about-heading { font-size: clamp(44px, 5.5vw, 72px); margin-bottom: 28px; }
+  .about-text p { font-size: 12px; line-height: 2; }
+  .b-title { font-size: 12px; }
+  .b-text { font-size: 12px; line-height: 1.8; }
+  .belief { padding: 18px 0; }
+
+  /* Skills */
+  .skill-group { padding: 28px 24px; }
+  .sg-list li { font-size: 12px; }
+
+  /* Projects */
+  .proj-desc { font-size: 12px; }
+  .proj-tag { font-size: 10px; }
+
+  /* Label */
+  #label .label-layout { grid-template-columns: 1fr 240px; gap: 48px; }
+  .label-heading { font-size: clamp(44px, 5.5vw, 80px); }
+  .label-text p { font-size: 12px; }
+  .lsvc-body { font-size: 12px; }
+  .ls-key { font-size: 11px; }
+  .ls-val { font-size: 12px; }
+
+  /* Contact */
+  #contact .contact-layout { gap: 56px; }
+  .contact-heading { font-size: clamp(44px, 5.5vw, 80px); }
+  .contact-sub { font-size: 12px; }
+
+  /* Footer */
+  footer { padding: 22px 40px; }
+}
+
+/* ── LARGE MONITOR (1381px – 1920px) ────────────────────────
+   1080p monitors, 1440p displays                              */
+@media (min-width: 1381px) {
+  nav { padding: 0 64px; height: 52px; }
+  .nav-links a { height: 52px; padding: 0 20px; }
+  #hero, #about, #skills, #projects, #label, #contact { scroll-margin-top: 52px; }
+
+  .hero-content { padding: 48px 64px 0; }
+  .hero-bottom { padding: 24px 64px; }
+  .hero-stamp { top: 80px; right: 64px; }
+  .hero-name { font-size: clamp(56px, 6.5vw, 112px); }
+  .hero-overprint { font-size: clamp(80px, 9.5vw, 152px); }
+  .split-head { font-size: clamp(28px, 2.8vw, 44px); }
+  .split-side:first-child { padding-right: 52px; }
+  .split-side:last-child { padding-left: 52px; }
+
+  .section { padding: 96px 64px; }
+  .s-bg-num { font-size: 190px; right: 64px; }
+
+  #about .about-layout { gap: 96px; }
+  .about-heading { font-size: clamp(56px, 6vw, 96px); }
+
+  #label .label-layout { gap: 96px; grid-template-columns: 1fr 300px; }
+  .label-heading { font-size: clamp(56px, 6.5vw, 104px); }
+
+  #contact .contact-layout { gap: 96px; }
+  .contact-heading { font-size: clamp(56px, 6vw, 100px); }
+
+  footer { padding: 28px 64px; }
+}
+
 /* ── TABLET (681px – 1024px) ─────────────────────────────── */
 @media (min-width: 681px) and (max-width: 1024px) {
   nav { padding: 0 32px; }
@@ -1218,7 +1308,7 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.06 });
 document.querySelectorAll('.r').forEach(el => io.observe(el));
 
-/* ── Nav scroll with offset — belt & suspenders for all browsers ── */
+/* ── Nav scroll with offset — reads actual nav height dynamically ── */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const id = link.getAttribute('href').slice(1);
@@ -1226,7 +1316,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     const target = document.getElementById(id);
     if (!target) return;
     e.preventDefault();
-    const navH = document.querySelector('nav').offsetHeight;
+    const navH = document.querySelector('nav').getBoundingClientRect().height;
     const top = target.getBoundingClientRect().top + window.scrollY - navH;
     window.scrollTo({ top, behavior: 'smooth' });
   });
