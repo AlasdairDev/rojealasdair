@@ -62,16 +62,31 @@ addEventListener('hashchange', () => swap(viewFromHash()));
 (function runLoader() {
   const loader = document.getElementById('loader');
   const cEl = document.getElementById('loaderCount');
-  const start = () => { swap(viewFromHash()); };
-  const finish = () => setTimeout(() => { if (loader) loader.classList.add('done'); start(); }, 160);
+  const start = () => swap(viewFromHash());
+  if (!loader || !cEl) { start(); return; }
 
-  if (reduceMotion || !loader) { if (cEl) cEl.textContent = '100'; finish(); return; }
-  const t0 = performance.now(), dur = 900;
+  // Count is tied to the real page load: climb to ~90%, then finish at 100 once loaded.
+  let loaded = document.readyState === 'complete';
+  addEventListener('load', () => { loaded = true; });
+
+  const t0 = performance.now();
+  const minDur = reduceMotion ? 600 : 1500;   // guaranteed visible count-up time
+  let shown = 0;
+
   (function tick(now) {
-    const k = Math.min((now - t0) / dur, 1);
-    if (cEl) cEl.textContent = String(Math.floor(k * 100)).padStart(3, '0');
-    if (k < 1) requestAnimationFrame(tick); else finish();
-  })(t0);
+    const t = now - t0;
+    let target = Math.min(90, (t / minDur) * 90);       // ramp to 90 over minDur
+    if (loaded && t >= minDur) target = 100;            // only complete once truly loaded
+    shown += (target - shown) * 0.14;
+    const disp = Math.min(100, Math.max(0, Math.round(shown)));
+    cEl.textContent = String(disp).padStart(3, '0');
+    if (disp >= 100) {
+      cEl.textContent = '100';
+      setTimeout(() => { loader.classList.add('done'); start(); }, 260);
+      return;
+    }
+    requestAnimationFrame(tick);
+  })(performance.now());
 })();
 
 /* ── WEBGL — SUBTLE MONOCHROME GRAIN FIELD ── */
