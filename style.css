@@ -49,11 +49,6 @@ body.no-webgl { background:radial-gradient(70% 60% at 30% 40%, color-mix(in srgb
 /* ── CURSOR ── */
 .cursor { position:fixed; top:0; left:0; width:7px; height:7px; margin:-3.5px 0 0 -3.5px; border-radius:50%; background:var(--fg); pointer-events:none; z-index:9990; mix-blend-mode:difference; }
 
-/* ── LOADER ── */
-.loader { position:fixed; inset:0; z-index:9000; background:var(--bg); display:flex; align-items:center; justify-content:center; transition:opacity .7s ease, visibility .7s; }
-.loader.done { opacity:0; visibility:hidden; pointer-events:none; }
-.loader-count { font-family:var(--font); font-weight:200; font-size:clamp(52px,10vw,110px); letter-spacing:-.03em; }
-
 /* ── HEADER ── */
 .topbar {
   position:fixed; top:0; left:0; right:0; z-index:500;
@@ -83,12 +78,13 @@ body.no-webgl { background:radial-gradient(70% 60% at 30% 40%, color-mix(in srgb
 .container { width:100%; max-width:1120px; margin:0 auto; }
 
 /* ── HOME / HERO ── */
-.hero-kick { font-size:12.5px; letter-spacing:.02em; color:var(--dim); margin-bottom:22px; }
+.hero-kick { font-size:12.5px; letter-spacing:.02em; color:var(--dim); margin-bottom:20px; }
 .a-tag { color:var(--a); } .b-tag { color:var(--b); }
-.hero-line { font-weight:200; font-size:clamp(34px,5.6vw,74px); line-height:1.05; letter-spacing:-.03em; margin-bottom:26px; }
+.hero-name { font-weight:200; font-size:clamp(44px,7.4vw,96px); line-height:1.02; letter-spacing:-.035em; margin-bottom:18px; }
+[data-theme="mono"] .hero-name { font-weight:300; letter-spacing:-.05em; }
+.hero-line { font-weight:300; font-size:clamp(18px,2.3vw,30px); line-height:1.25; letter-spacing:-.02em; color:var(--mid); margin-bottom:24px; }
 .hero-line em { font-style:normal; font-size:inherit; }
 .hero-line em.hl-a { color:var(--a); } .hero-line em.hl-b { color:var(--b); }
-[data-theme="mono"] .hero-line { font-weight:300; letter-spacing:-.05em; }
 .hero-intro { font-size:15.5px; color:var(--mid); line-height:1.75; max-width:600px; margin-bottom:30px; }
 .hero-links { display:flex; flex-wrap:wrap; gap:24px; }
 .hero-links a { font-size:14px; color:var(--fg); border-bottom:1px solid var(--line); padding-bottom:4px; transition:color .2s, border-color .2s; }

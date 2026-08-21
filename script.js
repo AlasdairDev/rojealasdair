@@ -58,36 +58,8 @@ function swap(name) {
 }
 addEventListener('hashchange', () => swap(viewFromHash()));
 
-/* ── LOADER → START ── */
-(function runLoader() {
-  const loader = document.getElementById('loader');
-  const cEl = document.getElementById('loaderCount');
-  const start = () => swap(viewFromHash());
-  if (!loader || !cEl) { start(); return; }
-
-  // Count is tied to the real page load: climb to ~90%, then finish at 100 once loaded.
-  let loaded = document.readyState === 'complete';
-  addEventListener('load', () => { loaded = true; });
-
-  const t0 = performance.now();
-  const minDur = reduceMotion ? 600 : 1500;   // guaranteed visible count-up time
-  let shown = 0;
-
-  (function tick(now) {
-    const t = now - t0;
-    let target = Math.min(90, (t / minDur) * 90);       // ramp to 90 over minDur
-    if (loaded && t >= minDur) target = 100;            // only complete once truly loaded
-    shown += (target - shown) * 0.14;
-    const disp = Math.min(100, Math.max(0, Math.round(shown)));
-    cEl.textContent = String(disp).padStart(3, '0');
-    if (disp >= 100) {
-      cEl.textContent = '100';
-      setTimeout(() => { loader.classList.add('done'); start(); }, 260);
-      return;
-    }
-    requestAnimationFrame(tick);
-  })(performance.now());
-})();
+/* ── START ── */
+swap(viewFromHash());
 
 /* ── WEBGL — SUBTLE MONOCHROME GRAIN FIELD ── */
 (function () {
