@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>Roje Alasdair Evangelista — Security &amp; Sound / Manila</title>
-<meta name="description" content="Roje Alasdair Evangelista. Cybersecurity student at PUP Manila and founder of 777heaven Records. Building at the seam of networks and sound.">
+<meta name="description" content="Roje Alasdair Evangelista. Cybersecurity student at PUP Manila — networks, web and Android security — and founder of 777heaven Records. Building at the seam of networks and sound.">
 <meta name="author" content="Roje Alasdair Evangelista">
 <meta name="keywords" content="Roje Alasdair, Evangelista, PUP Manila, cybersecurity, 777heaven Records, Manila, developer, portfolio">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#0a0b0a">
+<meta name="theme-color" content="#080908">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Roje Alasdair Evangelista">
+<meta property="og:title" content="Roje Alasdair Evangelista — Security &amp; Sound">
 <meta property="og:description" content="Cybersecurity student at PUP Manila and founder of 777heaven Records.">
 <meta property="og:site_name" content="Roje Alasdair Evangelista">
 <meta property="og:locale" content="en_PH">
@@ -20,11 +19,11 @@
 <meta name="twitter:title" content="Roje Alasdair Evangelista">
 <meta name="twitter:description" content="Cybersecurity student at PUP Manila and founder of 777heaven Records.">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0b0a'/><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='18' fill='%23f0efea'>r</text></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23080908'/><rect x='4' y='4' width='24' height='24' rx='2' fill='none' stroke='%23a8f05a' stroke-width='1'/><text x='16' y='22' text-anchor='middle' font-family='monospace' font-size='15' fill='%23a8f05a'>R</text></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 <script>try{var t=localStorage.getItem('rae-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
@@ -33,75 +32,259 @@
 
 <canvas id="gl" aria-hidden="true"></canvas>
 <div class="grain" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
 
 <!-- ── HEADER ── -->
 <header class="topbar">
-  <a class="brand" href="#home" data-link>Roje Alasdair Evangelista</a>
-  <nav class="nav">
-    <a href="#home" data-link data-view-link="home">Home</a>
-    <a href="#work" data-link data-view-link="work">Work</a>
-    <a href="#label" data-link data-view-link="label">Label</a>
-    <a href="#info" data-link data-view-link="info">Info</a>
-    <a href="#contact" data-link data-view-link="contact">Contact</a>
-    <a href="#faq" data-link data-view-link="faq">FAQ</a>
-    <span class="theme-seg" id="themeSeg">
-      <button type="button" data-theme-set="dark">Dark</button>
-      <button type="button" data-theme-set="light">Light</button>
-      <button type="button" data-theme-set="mono">Mono</button>
-    </span>
+  <a class="brand" href="#home" data-link aria-label="Roje Alasdair Evangelista — home">
+    <span class="brand-mark" aria-hidden="true">R</span>
+    <span class="brand-txt">Roje Alasdair <b>Evangelista</b></span>
+  </a>
+
+  <nav class="nav" id="nav" aria-label="Primary">
+    <a href="#home" data-link data-view-link="home"><i>00</i>Home</a>
+    <a href="#work" data-link data-view-link="work"><i>01</i>Work</a>
+    <a href="#label" data-link data-view-link="label"><i>02</i>Label</a>
+    <a href="#info" data-link data-view-link="info"><i>03</i>Info</a>
+    <a href="#contact" data-link data-view-link="contact"><i>04</i>Contact</a>
+    <a href="#faq" data-link data-view-link="faq"><i>05</i>FAQ</a>
   </nav>
+
+  <div class="bar-tools">
+    <span class="theme-seg" id="themeSeg" role="group" aria-label="Colour theme">
+      <button type="button" data-theme-set="dark" title="Obsidian">Dark</button>
+      <button type="button" data-theme-set="light" title="Paper">Paper</button>
+      <button type="button" data-theme-set="mono" title="Terminal">Mono</button>
+    </span>
+    <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><b>Menu</b>
+    </button>
+  </div>
 </header>
 
 <main id="stage">
 
-  <!-- HOME -->
+  <!-- ═══ HOME ═══ -->
   <section class="view" data-view="home" id="v-home">
-    <div class="container hero">
-      <p class="hero-kick">Manila, PH · <span class="a-tag">security</span> &amp; <span class="b-tag">sound</span></p>
-      <h1 class="hero-name">Roje Alasdair<br>Evangelista</h1>
-      <p class="hero-line">I build at the seam of <em class="hl-a">networks</em> and <em class="hl-b">sound</em>.</p>
-      <p class="hero-intro">Cybersecurity student at PUP Manila and founder of 777heaven Records — an independent underground label. Two crafts, one instinct: find what's missing, build the thing that fixes it, and keep it clean enough to last.</p>
-      <div class="hero-links">
-        <a href="#work" data-link>Selected work →</a>
-        <a href="#label" data-link>The label →</a>
-        <a href="https://github.com/AlasdairDev" target="_blank" rel="noopener">GitHub ↗</a>
+    <div class="container">
+
+      <div class="statusline">
+        <span class="stat-item"><span class="pulse" aria-hidden="true"></span>Open to opportunities</span>
+        <span class="stat-sep" aria-hidden="true">/</span>
+        <span class="stat-item">Manila, PH <span class="dim stat-coords">14.5995°N 120.9842°E</span></span>
+        <span class="stat-sep" aria-hidden="true">/</span>
+        <span class="stat-item"><span class="dim">Local</span> <time id="clock">--:--:--</time></span>
       </div>
+
+      <h1 class="hero-name">
+        <span class="hn-1">Roje Alasdair</span>
+        <span class="hn-2">Evangelista</span>
+      </h1>
+
+      <p class="hero-line">I build at the seam of <em class="c-sec">networks</em> and <em class="c-amb">sound</em>.</p>
+      <p class="hero-intro">Cybersecurity student at PUP Manila. I test web apps and Android builds — self-taught, labs and authorized scopes only — and I run 777heaven Records, an independent underground label. Two crafts, one instinct: find what's missing, build the thing that fixes it, keep it clean enough to last.</p>
+
+      <div class="duo">
+        <a class="duo-card duo-sec" href="#work" data-link>
+          <span class="duo-k"><i>01</i> Security</span>
+          <span class="duo-t">Networks, zero-trust,<br>safety systems.</span>
+          <span class="duo-meta">6 security · 2 safety builds</span>
+          <span class="duo-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="duo-card duo-amb" href="#label" data-link>
+          <span class="duo-k"><i>02</i> Sound</span>
+          <span class="duo-t">777heaven Records —<br>39 artists, Manila.</span>
+          <span class="duo-meta">Independent · Since 2024</span>
+          <span class="duo-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="hero-links">
+        <a href="#work" data-link>Selected work <span aria-hidden="true">→</span></a>
+        <a href="#label" data-link>The label <span aria-hidden="true">→</span></a>
+        <a href="https://github.com/AlasdairDev" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+
     </div>
   </section>
 
-  <!-- WORK -->
+  <!-- ═══ WORK ═══ -->
   <section class="view" data-view="work" id="v-work">
     <div class="container">
-      <div class="head"><span class="head-no">01</span><h2 class="head-title">Work</h2><span class="head-note">Selected — security, safety &amp; sound.</span></div>
-      <ol class="proj">
-        <li><a class="prow" data-side="c" href="https://github.com/AlasdairDev/alarma-app" target="_blank" rel="noopener"><span class="pr-main"><span class="pr-t">Alarma</span><span class="pr-desc">Commuter-safety mobile app — adaptive alarms and emergency SOS tools. My capstone.</span></span><span class="pr-c">Mobile · Capstone</span><span class="pr-g">safety</span><span class="pr-a">↗</span></a></li>
-        <li><a class="prow" data-side="c" href="https://github.com/AlasdairDev/navalert" target="_blank" rel="noopener"><span class="pr-main"><span class="pr-t">NavAlert</span><span class="pr-desc">Offline commute-monitoring &amp; personal-safety system for Metro Manila jeepney/bus routes.</span></span><span class="pr-c">Flutter · Android</span><span class="pr-g">safety</span><span class="pr-a">↗</span></a></li>
-        <li><a class="prow" data-side="a" href="https://github.com/AlasdairDev/whxrl" target="_blank" rel="noopener"><span class="pr-main"><span class="pr-t">Whxrl</span><span class="pr-desc">Pocket-sized, network-wide DNS sinkhole on the M5Stick — hardware ad &amp; tracker blocker, zero client install.</span></span><span class="pr-c">Hardware · M5Stick</span><span class="pr-g">security</span><span class="pr-a">↗</span></a></li>
-        <li><a class="prow" data-side="a" href="https://github.com/AlasdairDev/777-HashHarden" target="_blank" rel="noopener"><span class="pr-main"><span class="pr-t">777-HashHarden</span><span class="pr-desc">Python Zero-Trust gateway — Magic-Byte verification + SHA-256 integrity for music assets before distribution.</span></span><span class="pr-c">Python · Zero-Trust</span><span class="pr-g">security</span><span class="pr-a">↗</span></a></li>
-        <li><a class="prow" data-side="a" href="https://github.com/AlasdairDev/DormBound" target="_blank" rel="noopener"><span class="pr-main"><span class="pr-t">DormBound</span><span class="pr-desc">Network optimization for stabilizing and improving performance in high-density dormitory Wi-Fi.</span></span><span class="pr-c">Networking</span><span class="pr-g">security</span><span class="pr-a">↗</span></a></li>
-        <li><a class="prow" data-side="a" href="https://github.com/AlasdairDev/WUBlock" target="_blank" rel="noopener"><span class="pr-main"><span class="pr-t">WUBlock</span><span class="pr-desc">Hard-blocks forced Windows updates through multi-layered system modification.</span></span><span class="pr-c">Windows · Utility</span><span class="pr-g">security</span><span class="pr-a">↗</span></a></li>
-        <li><a class="prow" data-side="b" href="https://github.com/AlasdairDev/777hvnrx-pitchingform" target="_blank" rel="noopener"><span class="pr-main"><span class="pr-t">777HVN Pitch Portal</span><span class="pr-desc">Streamlined, secure pitch-document submission system for artist and band rosters.</span></span><span class="pr-c">Web · Submissions</span><span class="pr-g">sound</span><span class="pr-a">↗</span></a></li>
-        <li><a class="prow" data-side="b" href="https://github.com/AlasdairDev/777heaven-records" target="_blank" rel="noopener"><span class="pr-main"><span class="pr-t">777heaven Records</span><span class="pr-desc">Flagship platform for the label — roster, EPKs, and full brand identity.</span></span><span class="pr-c">Web · Platform</span><span class="pr-g">sound</span><span class="pr-a">↗</span></a></li>
+      <div class="head">
+        <span class="head-k">01 — Index</span>
+        <h2 class="head-title">Selected work</h2>
+        <span class="head-note">Security, safety &amp; sound</span>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" class="filter is-on" data-filter="all" aria-pressed="true">All <b>10</b></button>
+        <button type="button" class="filter" data-filter="security" aria-pressed="false">Security <b>06</b></button>
+        <button type="button" class="filter" data-filter="safety" aria-pressed="false">Safety <b>02</b></button>
+        <button type="button" class="filter" data-filter="sound" aria-pressed="false">Sound <b>02</b></button>
+      </div>
+
+      <ol class="proj" id="proj">
+        <li data-cat="safety">
+          <a class="prow" href="https://github.com/AlasdairDev/alarma-app" target="_blank" rel="noopener">
+            <span class="pr-no">01</span>
+            <span class="pr-main">
+              <span class="pr-t">Alarma</span>
+              <span class="pr-desc">Commuter-safety mobile app — adaptive alarms and emergency SOS tools. My capstone.</span>
+            </span>
+            <span class="pr-tags"><i>Mobile</i><i>Capstone</i></span>
+            <span class="pr-cat" data-cat="safety">Safety</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-cat="safety">
+          <a class="prow" href="https://github.com/AlasdairDev/navalert" target="_blank" rel="noopener">
+            <span class="pr-no">02</span>
+            <span class="pr-main">
+              <span class="pr-t">NavAlert</span>
+              <span class="pr-desc">Offline commute-monitoring &amp; personal-safety system for Metro Manila jeepney and bus routes.</span>
+            </span>
+            <span class="pr-tags"><i>Flutter</i><i>Android</i></span>
+            <span class="pr-cat" data-cat="safety">Safety</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-cat="security">
+          <a class="prow" href="https://github.com/AlasdairDev/project-n3rve" target="_blank" rel="noopener">
+            <span class="pr-no">03</span>
+            <span class="pr-main">
+              <span class="pr-t">n3rve</span>
+              <span class="pr-desc">Wireless assessment suite — GPU-accelerated WPA/WPA2 recovery, PMKID attacks, PH ISP default-key intelligence and client-ready reports. Builds on handshakeCracker.</span>
+            </span>
+            <span class="pr-tags"><i>Python</i><i>Hashcat</i><i>Wireless</i></span>
+            <span class="pr-cat" data-cat="security">Security</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-cat="security">
+          <a class="prow" href="https://github.com/AlasdairDev/project-d1zzy" target="_blank" rel="noopener">
+            <span class="pr-no">04</span>
+            <span class="pr-main">
+              <span class="pr-t">D1zzy Market</span>
+              <span class="pr-desc">Privacy-first marketplace prototype over Tor — signed listings, end-to-end encrypted chat, XChaCha20 at rest, and a written threat model.</span>
+            </span>
+            <span class="pr-tags"><i>FastAPI</i><i>Tor</i><i>Crypto</i></span>
+            <span class="pr-cat" data-cat="security">Security</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-cat="security">
+          <a class="prow" href="https://github.com/AlasdairDev/whxrl" target="_blank" rel="noopener">
+            <span class="pr-no">05</span>
+            <span class="pr-main">
+              <span class="pr-t">Whxrl</span>
+              <span class="pr-desc">Pocket-sized, network-wide DNS sinkhole on the M5Stick — hardware ad &amp; tracker blocker, zero client install.</span>
+            </span>
+            <span class="pr-tags"><i>Hardware</i><i>M5Stick</i></span>
+            <span class="pr-cat" data-cat="security">Security</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-cat="security">
+          <a class="prow" href="https://github.com/AlasdairDev/777-HashHarden" target="_blank" rel="noopener">
+            <span class="pr-no">06</span>
+            <span class="pr-main">
+              <span class="pr-t">777-HashHarden</span>
+              <span class="pr-desc">Python Zero-Trust gateway — Magic-Byte verification and SHA-256 integrity for music assets before distribution.</span>
+            </span>
+            <span class="pr-tags"><i>Python</i><i>Zero-Trust</i></span>
+            <span class="pr-cat" data-cat="security">Security</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-cat="security">
+          <a class="prow" href="https://github.com/AlasdairDev/DormBound" target="_blank" rel="noopener">
+            <span class="pr-no">07</span>
+            <span class="pr-main">
+              <span class="pr-t">DormBound</span>
+              <span class="pr-desc">Network optimisation for stabilising and improving performance in high-density dormitory Wi-Fi.</span>
+            </span>
+            <span class="pr-tags"><i>Networking</i></span>
+            <span class="pr-cat" data-cat="security">Security</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-cat="security">
+          <a class="prow" href="https://github.com/AlasdairDev/WUBlock" target="_blank" rel="noopener">
+            <span class="pr-no">08</span>
+            <span class="pr-main">
+              <span class="pr-t">WUBlock</span>
+              <span class="pr-desc">Hard-blocks forced Windows updates through multi-layered system modification.</span>
+            </span>
+            <span class="pr-tags"><i>Windows</i><i>Utility</i></span>
+            <span class="pr-cat" data-cat="security">Security</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-cat="sound">
+          <a class="prow" href="https://github.com/AlasdairDev/777hvnrx-pitchingform" target="_blank" rel="noopener">
+            <span class="pr-no">09</span>
+            <span class="pr-main">
+              <span class="pr-t">777HVN Pitch Portal</span>
+              <span class="pr-desc">Streamlined, secure pitch-document submission system for artist and band rosters.</span>
+            </span>
+            <span class="pr-tags"><i>Web</i><i>Submissions</i></span>
+            <span class="pr-cat" data-cat="sound">Sound</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-cat="sound">
+          <a class="prow" href="https://github.com/AlasdairDev/777heaven-records" target="_blank" rel="noopener">
+            <span class="pr-no">10</span>
+            <span class="pr-main">
+              <span class="pr-t">777heaven Records</span>
+              <span class="pr-desc">Flagship platform for the label — roster, EPKs, and full brand identity.</span>
+            </span>
+            <span class="pr-tags"><i>Web</i><i>Platform</i></span>
+            <span class="pr-cat" data-cat="sound">Sound</span>
+            <span class="pr-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
       </ol>
-      <p class="foot-note">More on <a href="https://github.com/AlasdairDev" target="_blank" rel="noopener">GitHub ↗</a></p>
+
+      <p class="foot-note">More on <a href="https://github.com/AlasdairDev" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></p>
     </div>
   </section>
 
-  <!-- LABEL -->
+  <!-- ═══ LABEL ═══ -->
   <section class="view" data-view="label" id="v-label">
     <div class="container">
-      <div class="head"><span class="head-no">02</span><h2 class="head-title">777heaven Records</h2><a class="head-link" href="https://777heavenrecords.studio/" target="_blank" rel="noopener">777heavenrecords.studio ↗</a></div>
+      <div class="head">
+        <span class="head-k">02 — Imprint</span>
+        <h2 class="head-title">777heaven Records</h2>
+        <a class="head-link" href="https://777heavenrecords.studio/" target="_blank" rel="noopener">777heavenrecords.studio <span aria-hidden="true">↗</span></a>
+      </div>
 
       <div class="label-grid">
-        <div class="label-main">
-          <p class="label-lede">The Fool's Journey — <em>told through sound.</em></p>
-          <p class="label-quote">“The music was always here. The support wasn't.”</p>
-          <p class="creed-line">Self-Made · It Stays Yours · Still In It</p>
-          <div class="label-cta">
-            <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfak0GIpEouCKiyZC1cGX3d8y5vAyjD1NucxYDyE3IPbUvi7g/viewform" target="_blank" rel="noopener">Submit a demo ↗</a>
-            <a class="btn-text" href="https://777heavenrecords.studio/" target="_blank" rel="noopener">Visit the studio ↗</a>
+        <div class="label-visual">
+          <div class="vinyl" aria-hidden="true">
+            <div class="vinyl-disc">
+              <div class="vinyl-sheen"></div>
+              <div class="vinyl-label">
+                <span class="vl-top">777</span>
+                <span class="vl-mid">heaven</span>
+                <span class="vl-bot">records</span>
+              </div>
+              <span class="vinyl-hole"></span>
+            </div>
           </div>
-          <p class="label-fine">PH-based, non-mainstream. Links only.</p>
+          <p class="vinyl-cap"><span class="dim">Cat. no.</span> 777-HVN-001 <span class="dim">/ 33⅓ RPM</span></p>
+        </div>
+
+        <div class="label-main">
+          <p class="label-lede">The Fool's Journey —<br><em>told through sound.</em></p>
+          <p class="label-quote">“The music was always here. The support wasn't.”</p>
+          <p class="creed-line"><span>Self-Made</span><span>It Stays Yours</span><span>Still In It</span></p>
+          <div class="label-cta">
+            <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfak0GIpEouCKiyZC1cGX3d8y5vAyjD1NucxYDyE3IPbUvi7g/viewform" target="_blank" rel="noopener">Submit a demo <span aria-hidden="true">↗</span></a>
+            <a class="btn-text" href="https://777heavenrecords.studio/" target="_blank" rel="noopener">Visit the studio <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="label-fine">PH-based, non-mainstream. Links only — everything stays yours.</p>
         </div>
 
         <aside class="label-side">
@@ -120,56 +303,151 @@
           </p>
         </aside>
       </div>
-    </div>
-  </section>
 
-  <!-- INFO -->
-  <section class="view" data-view="info" id="v-info">
-    <div class="container">
-      <div class="head"><span class="head-no">03</span><h2 class="head-title">Info</h2></div>
-      <div class="info-cols">
-        <div class="prose">
-          <p>BSIT student at PUP Manila. Network engineering is the foundation; cybersecurity is the goal. I learn by building — usually on Linux, usually in the terminal, because that's where things start to make sense. I pick up tools because I'm curious, not to fill a resume.</p>
-          <p>The other half of what I do is 777heaven Records, an independent label I run out of Manila. Same instinct: see what's missing, build something to fix it, keep it clean.</p>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Self-Made</span><b>·</b><span>It Stays Yours</span><b>·</b><span>Still In It</span><b>·</b>
+          <span>777heaven Records</span><b>·</b><span>Manila, PH</span><b>·</b><span>33⅓</span><b>·</b>
+          <span>Self-Made</span><b>·</b><span>It Stays Yours</span><b>·</b><span>Still In It</span><b>·</b>
+          <span>777heaven Records</span><b>·</b><span>Manila, PH</span><b>·</b><span>33⅓</span><b>·</b>
         </div>
-        <dl class="deflist">
-          <div><dt>Studying</dt><dd>BSIT · PUP Manila</dd></div>
-          <div><dt>Focus</dt><dd>Networks → cybersecurity</dd></div>
-          <div><dt>Running</dt><dd>777heaven Records — 39 artists</dd></div>
-          <div><dt>Based</dt><dd>Manila, PH</dd></div>
-          <div><dt>Security</dt><dd>Nmap · Wireshark · Metasploit · Burp</dd></div>
-          <div><dt>Systems</dt><dd>Linux · Python · Bash · MySQL</dd></div>
-          <div><dt>Web</dt><dd>HTML · CSS · JS · WebGL / GLSL</dd></div>
-        </dl>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ═══ INFO ═══ -->
+  <section class="view" data-view="info" id="v-info">
+    <div class="container">
+      <div class="head">
+        <span class="head-k">03 — Operator</span>
+        <h2 class="head-title">Info</h2>
+        <span class="head-note">Networks first. Sound always.</span>
+      </div>
+
+      <div class="info-cols">
+        <div class="info-left">
+          <div class="prose">
+            <p>BSIT student at PUP Manila. Network engineering is the foundation; cybersecurity is the goal. I learn by building — usually on Linux, usually in the terminal, because that's where things start to make sense. I pick up tools because I'm curious, not to fill a résumé.</p>
+            <p>The other half of what I do is <b>777heaven Records</b>, an independent label I run out of Manila. Same instinct: see what's missing, build something to fix it, keep it clean.</p>
+          </div>
+
+          <div class="term" aria-label="Terminal snippet">
+            <div class="term-bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <b>rae@manila — zsh</b>
+            </div>
+            <pre><span class="t-c">$</span> whoami
+roje alasdair evangelista
+
+<span class="t-c">$</span> cat focus.txt
+networks → offensive security · web + android · sound
+
+<span class="t-c">$</span> ls ~/777heaven
+<span class="t-a">roster/</span>  <span class="t-a">epks/</span>  <span class="t-a">distribution/</span>  <span class="t-a">integrity/</span>
+
+<span class="t-c">$</span> <span class="t-caret">█</span></pre>
+          </div>
+        </div>
+
+        <div class="info-right">
+          <dl class="deflist">
+            <div><dt>Studying</dt><dd>BSIT · PUP Manila</dd></div>
+            <div><dt>Focus</dt><dd>Offensive security — web &amp; Android</dd></div>
+            <div><dt>Running</dt><dd>777heaven Records — 39 artists</dd></div>
+            <div><dt>Based</dt><dd>Manila, PH</dd></div>
+            <div><dt>Certified</dt><dd>Not yet — self-taught</dd></div>
+          </dl>
+
+          <div class="stack">
+            <div class="stack-grp">
+              <h3>Security</h3>
+              <p class="chips"><span>Nmap</span><span>Wireshark</span><span>Metasploit</span><span>Burp Suite</span></p>
+            </div>
+            <div class="stack-grp">
+              <h3>Systems</h3>
+              <p class="chips"><span>Linux</span><span>Python</span><span>Bash</span><span>MySQL</span></p>
+            </div>
+            <div class="stack-grp">
+              <h3>Web</h3>
+              <p class="chips"><span>HTML</span><span>CSS</span><span>JS</span><span>WebGL / GLSL</span></p>
+            </div>
+          </div>
+
+          <div class="practice">
+            <h3>Offensive practice</h3>
+            <p>Web applications and Android builds — recon, authentication and access control, input handling, and written reports. Everything runs in a lab or under explicit permission.</p>
+            <p class="practice-note">No certificate behind it yet. Self-taught and project-first: the repos are the evidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
   <section class="view" data-view="contact" id="v-contact">
     <div class="container">
-      <div class="head"><span class="head-no">04</span><h2 class="head-title">Contact</h2></div>
-      <div class="prose"><p>I'm a student, not a startup — but I'm serious about what I build. Best reached on LinkedIn; for the label, the demo form is the door.</p></div>
+      <div class="head">
+        <span class="head-k">04 — Signal</span>
+        <h2 class="head-title">Contact</h2>
+        <span class="head-note">Two doors, both open</span>
+      </div>
+
+      <p class="contact-lede">Student, not a startup — but serious about what I build. Security opportunities go to LinkedIn. Music goes to the demo form.</p>
+
       <ul class="linklist">
-        <li><a href="https://www.linkedin.com/in/roje-alasdair-evangelista-00630b291/" target="_blank" rel="noopener"><span>LinkedIn</span><span class="ll-v">Roje Alasdair Evangelista ↗</span></a></li>
-        <li><a href="https://github.com/AlasdairDev" target="_blank" rel="noopener"><span>GitHub</span><span class="ll-v">AlasdairDev ↗</span></a></li>
-        <li><a href="https://777heavenrecords.studio/" target="_blank" rel="noopener"><span>The Label</span><span class="ll-v">777heavenrecords.studio ↗</span></a></li>
-        <li><a href="https://www.instagram.com/777hvnrx" target="_blank" rel="noopener"><span>Instagram</span><span class="ll-v">@777hvnrx ↗</span></a></li>
-        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfak0GIpEouCKiyZC1cGX3d8y5vAyjD1NucxYDyE3IPbUvi7g/viewform" target="_blank" rel="noopener"><span>Submit a demo</span><span class="ll-v">for 777heaven Records ↗</span></a></li>
+        <li><a href="https://www.linkedin.com/in/roje-alasdair-evangelista-00630b291/" target="_blank" rel="noopener">
+          <span class="ll-no">01</span><span class="ll-k">LinkedIn</span><span class="ll-v">Roje Alasdair Evangelista</span><span class="ll-a" aria-hidden="true">↗</span>
+        </a></li>
+        <li><a href="https://github.com/AlasdairDev" target="_blank" rel="noopener">
+          <span class="ll-no">02</span><span class="ll-k">GitHub</span><span class="ll-v">AlasdairDev</span><span class="ll-a" aria-hidden="true">↗</span>
+        </a></li>
+        <li><a href="https://777heavenrecords.studio/" target="_blank" rel="noopener">
+          <span class="ll-no">03</span><span class="ll-k">The label</span><span class="ll-v">777heavenrecords.studio</span><span class="ll-a" aria-hidden="true">↗</span>
+        </a></li>
+        <li><a href="https://www.instagram.com/777hvnrx" target="_blank" rel="noopener">
+          <span class="ll-no">04</span><span class="ll-k">Instagram</span><span class="ll-v">@777hvnrx</span><span class="ll-a" aria-hidden="true">↗</span>
+        </a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfak0GIpEouCKiyZC1cGX3d8y5vAyjD1NucxYDyE3IPbUvi7g/viewform" target="_blank" rel="noopener">
+          <span class="ll-no">05</span><span class="ll-k">Submit a demo</span><span class="ll-v">for 777heaven Records</span><span class="ll-a" aria-hidden="true">↗</span>
+        </a></li>
       </ul>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- ═══ FAQ ═══ -->
   <section class="view" data-view="faq" id="v-faq">
     <div class="container">
-      <div class="head"><span class="head-no">05</span><h2 class="head-title">FAQ</h2></div>
+      <div class="head">
+        <span class="head-k">05 — Readme</span>
+        <h2 class="head-title">FAQ</h2>
+        <span class="head-note">Plain answers</span>
+      </div>
+
       <div class="faq">
-        <div class="qa"><p class="q">What is it you actually do?</p><p class="a">Cybersecurity student at PUP Manila — networks as the foundation, security as the goal — and I run 777heaven Records, a 100% independent label with 39 artists.</p></div>
-        <div class="qa"><p class="q">How did you build this site?</p><p class="a">By hand — plain HTML/CSS/JS, no frameworks. The background is a WebGL/GLSL grain shader I wrote, with a soft light that follows your cursor.</p></div>
-        <div class="qa"><p class="q">Can I send music to the label?</p><p class="a">Yes — PH-based, non-mainstream. Use the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfak0GIpEouCKiyZC1cGX3d8y5vAyjD1NucxYDyE3IPbUvi7g/viewform" target="_blank" rel="noopener">demo form ↗</a>. Links only; everything stays yours.</p></div>
-        <div class="qa"><p class="q">What tools do you use?</p><p class="a">Security: Nmap, Wireshark, Metasploit, Burp. Systems: Linux, Python, Bash, MySQL. Web: plain HTML/CSS/JS and raw WebGL.</p></div>
-        <div class="qa"><p class="q">Open to work or collaborations?</p><p class="a">Yes — security opportunities and label collabs. Reach me on <a href="https://www.linkedin.com/in/roje-alasdair-evangelista-00630b291/" target="_blank" rel="noopener">LinkedIn ↗</a>, or the demo form for music.</p></div>
+        <details class="qa" open>
+          <summary><span class="q-no">01</span><span class="q">What is it you actually do?</span><span class="q-ico" aria-hidden="true"></span></summary>
+          <div class="a"><p>Cybersecurity student at PUP Manila — networks as the foundation, offensive security as the direction. I test web apps and Android builds, and I run 777heaven Records, a 100% independent label with 39 artists.</p></div>
+        </details>
+        <details class="qa">
+          <summary><span class="q-no">02</span><span class="q">How did you build this site?</span><span class="q-ico" aria-hidden="true"></span></summary>
+          <div class="a"><p>By hand — plain HTML, CSS and JS, no frameworks. The background is a WebGL/GLSL shader I wrote: a scanline field with a soft light that follows your cursor.</p></div>
+        </details>
+        <details class="qa">
+          <summary><span class="q-no">03</span><span class="q">Can I send music to the label?</span><span class="q-ico" aria-hidden="true"></span></summary>
+          <div class="a"><p>Yes — PH-based, non-mainstream. Use the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfak0GIpEouCKiyZC1cGX3d8y5vAyjD1NucxYDyE3IPbUvi7g/viewform" target="_blank" rel="noopener">demo form <span aria-hidden="true">↗</span></a>. Links only; everything stays yours.</p></div>
+        </details>
+        <details class="qa">
+          <summary><span class="q-no">04</span><span class="q">What tools do you use?</span><span class="q-ico" aria-hidden="true"></span></summary>
+          <div class="a"><p>Security: Nmap, Wireshark, Metasploit, Burp Suite. Systems: Linux, Python, Bash, MySQL. Web: plain HTML/CSS/JS and raw WebGL.</p></div>
+        </details>
+        <details class="qa">
+          <summary><span class="q-no">05</span><span class="q">Open to work or collaborations?</span><span class="q-ico" aria-hidden="true"></span></summary>
+          <div class="a"><p>Yes — security opportunities and label collabs. Reach me on <a href="https://www.linkedin.com/in/roje-alasdair-evangelista-00630b291/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>, or the demo form for music.</p></div>
+        </details>
+        <details class="qa">
+          <summary><span class="q-no">06</span><span class="q">Do you have security certifications?</span><span class="q-ico" aria-hidden="true"></span></summary>
+          <div class="a"><p>No — not yet. Everything I know is self-taught, tested in labs or with written permission. The repos and their security write-ups are the evidence I'd rather be judged on. A certificate is a hiring filter, not a licence to practise; it's the next box to tick, not the reason the work exists.</p></div>
+        </details>
       </div>
     </div>
   </section>
@@ -177,8 +455,9 @@
 </main>
 
 <footer class="footer">
-  <span>© 2026 Roje Alasdair Evangelista — Manila, PH</span>
-  <span class="foot-r">Built by hand.</span>
+  <span>© <span id="year">2026</span> Roje Alasdair Evangelista</span>
+  <span class="foot-mid" aria-hidden="true">Security &amp; Sound</span>
+  <span class="foot-r">Manila, PH · <time id="clockFoot">--:--</time></span>
 </footer>
 
 <script src="script.js"></script>
