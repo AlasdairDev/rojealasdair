@@ -7,8 +7,8 @@
 :root {
   --bg:#0b0b0b;
   --fg:#f1eee6;
-  --muted:#b9b6ad;
-  --dim:#959289;
+  --muted:#c6c3ba;
+  --dim:#a5a29a;
   --line:rgba(241,238,230,.2);
   --line-soft:rgba(241,238,230,.1);
   --accent:#8fe9c6;
@@ -34,8 +34,8 @@ body {
   background:var(--bg);
   color:var(--fg);
   font-family:var(--sans);
-  font-size:15.5px;
-  font-weight:450;
+  font-size:16px;
+  font-weight:470;
   line-height:1.65;
   overflow-x:clip;
 }
@@ -225,7 +225,7 @@ section { scroll-margin-top:0; }
     linear-gradient(rgba(236,236,234,.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(236,236,234,.05) 1px, transparent 1px);
   background-size:72px 72px;
-  opacity:.5;
+  opacity:.35;
 }
 .hero > :not(.hero-bg) { position:relative; }
 
@@ -406,7 +406,7 @@ h1 em {
 
 .ledger-head {
   display:grid;
-  grid-template-columns:34px minmax(0, 1.15fr) minmax(0, 1.05fr) 64px 76px 124px 14px;
+  grid-template-columns:34px minmax(0, 1.15fr) minmax(0, 1.05fr) 70px 76px 132px 14px;
   gap:clamp(12px, 2vw, 26px);
   padding:8px 0;
   border-bottom:1px solid var(--line-soft);
@@ -425,7 +425,7 @@ h1 em {
 .row a {
   position:relative;
   display:grid;
-  grid-template-columns:34px minmax(0, 1.15fr) minmax(0, 1.05fr) 64px 76px 124px 14px;
+  grid-template-columns:34px minmax(0, 1.15fr) minmax(0, 1.05fr) 70px 76px 132px 14px;
   gap:clamp(12px, 2vw, 26px);
   align-items:baseline;
   padding:15px 0;
@@ -523,8 +523,8 @@ h1 em {
 .light {
   --bg:#151514;
   --fg:#ececea;
-  --muted:#b9b6ad;
-  --dim:#959289;
+  --muted:#c6c3ba;
+  --dim:#a5a29a;
   --line:rgba(236,236,234,.2);
   --line-soft:rgba(236,236,234,.09);
   --accent:#8fe9c6;
@@ -912,9 +912,9 @@ blockquote {
   .spec-table { max-width:620px; }
 }
 
-@media (max-width:1000px) {
+@media (max-width:1100px) {
   .ledger-head, .r-cat, .r-date { display:none; }
-  .row a { grid-template-columns:34px minmax(0, 1fr) minmax(0, 1.2fr) 118px 14px; }
+  .row a { grid-template-columns:34px minmax(0, 1.15fr) minmax(0, 1.05fr) 132px 14px; }
 }
 
 @media (max-width:900px) {
@@ -965,41 +965,46 @@ blockquote {
 
 
 /* ── READABILITY PASS ───────────────────────────────────────── */
-.hero-meta { font-size:10px; flex-wrap:wrap; gap:4px 16px; }
-.hero-note { font-size:10px; }
-.rail-name, .rail-nav a { font-size:10px; }
-.rail-loc { font-size:9.5px; }
-.rail-links a, .rail-copy, .status { font-size:9.5px; }
-.sec-num { font-size:10px; }
-.sec-meta { font-size:9.5px; line-height:1.85; }
-.filter { font-size:10px; }
-.filter span { font-size:8.5px; }
-.ledger-head { font-size:9px; }
-.r-no { font-size:10px; }
-.r-cat { font-size:9px; }
-.r-date { font-size:9.5px; }
-.r-tags { font-size:9.5px; }
-.r-desc { font-size:13px; }
-.ledger-foot { font-size:9.5px; }
-.creed li { font-size:9.5px; }
-.label-stats dt { font-size:9.5px; }
-.label-socials a { font-size:10px; }
-.seal-cap { font-size:9.5px; }
-.cert p { font-size:13px; }
-.practice article p { font-size:13px; }
-.door-k { font-size:9.5px; }
-.door-n { font-size:13px; }
-.contact-links a { font-size:10px; }
-.disclosure { font-size:9.5px; }
-.f-no { font-size:10px; }
-.f-a p { font-size:14px; }
-.col-row { font-size:9.5px; letter-spacing:.09em; }
+.hero-meta { font-size:11px; flex-wrap:wrap; gap:4px 16px; }
+.hero-note { font-size:10.5px; }
+.rail-name, .rail-nav a { font-size:10.5px; }
+.rail-loc { font-size:10px; }
+.rail-links a, .rail-copy, .status { font-size:10px; }
+.sec-num { font-size:10.5px; }
+.sec-meta { font-size:10.5px; line-height:1.8; }
+.filter { font-size:10.5px; }
+.filter span { font-size:9.5px; }
+.ledger-head { font-size:9.5px; }
+.r-no { font-size:10.5px; }
+.r-cat { font-size:9.5px; }
+.r-date { font-size:10px; }
+.r-tags { font-size:10px; }
+.r-desc { font-size:14px; line-height:1.55; }
+.ledger-foot { font-size:10px; }
+.creed li { font-size:10px; }
+.label-stats dt { font-size:10px; }
+.label-socials a { font-size:10.5px; }
+.seal-cap { font-size:10px; }
+.statement { font-size:clamp(17px, 1.7vw, 19.5px); }
+.bio > p:not(.bio-lead) { font-size:15px; }
+.label-body { font-size:15px; }
+.cert p { font-size:14px; }
+.practice article p { font-size:14px; }
+.door-k { font-size:10px; }
+.door-n { font-size:13.5px; }
+.contact-links a { font-size:10.5px; }
+.disclosure { font-size:10px; }
+.f-no { font-size:10.5px; }
+.f-a p { font-size:14.5px; }
+.blockquote, blockquote { font-size:17px; }
+.col-row { font-size:10px; letter-spacing:.09em; }
+.spec-table th { font-size:9.5px; font-weight:600; }
 
 .hero-meta, .hero-note, .rail-name, .rail-nav a, .rail-loc, .rail-links a,
 .rail-copy, .status, .sec-num, .sec-meta, .filter, .ledger-head, .r-no,
 .r-cat, .r-date, .r-tags, .ledger-foot, .creed li, .label-stats dt,
 .label-socials a, .seal-cap, .door-k, .contact-links a, .disclosure,
-.f-no, .col-row { font-weight:500; }
+.f-no, .col-row { font-weight:600; }
 
 /* ── MOTION / PRINT ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
