@@ -1,20 +1,19 @@
 /* ══════════════════════════════════════════════════════════════
    Roje Alasdair Evangelista — behaviour
-   Menu, filters, year. No canvas, no observers, no loops.
+   Menu, project filter, year. No canvas, no loops, no observers.
    ══════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
   /* ── MOBILE MENU ───────────────────────────────────────────── */
-  var menuBtn = document.getElementById('menuBtn');
+  var menuBtn = document.getElementById('menu');
   var nav = document.getElementById('nav');
 
   function closeMenu() {
     document.body.classList.remove('nav-open');
     if (menuBtn) {
       menuBtn.setAttribute('aria-expanded', 'false');
-      var label = menuBtn.querySelector('span');
-      if (label) label.textContent = 'Menu';
+      menuBtn.setAttribute('aria-label', 'Open menu');
     }
   }
 
@@ -22,8 +21,7 @@
     menuBtn.addEventListener('click', function () {
       var open = document.body.classList.toggle('nav-open');
       menuBtn.setAttribute('aria-expanded', String(open));
-      var label = menuBtn.querySelector('span');
-      if (label) label.textContent = open ? 'Close' : 'Menu';
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     });
   }
 
@@ -41,7 +39,7 @@
     if (window.innerWidth > 860) closeMenu();
   });
 
-  /* ── WORK FILTER ───────────────────────────────────────────── */
+  /* ── FILTER ────────────────────────────────────────────────── */
   var filters = Array.prototype.slice.call(document.querySelectorAll('.filter'));
   var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
 
