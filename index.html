@@ -13,11 +13,11 @@
 <meta property="og:locale" content="en_PH">
 <meta name="twitter:card" content="summary">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0b0b'/><circle cx='16' cy='16' r='5' fill='%23ff3ea5'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230b0b0b'/><circle cx='16' cy='16' r='5' fill='%23ff3b2f'/></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -82,7 +82,7 @@
     </h1>
 
     <div class="hero-cols">
-      <p class="statement">Offensive security for web apps and Android — self-taught, in labs and under written permission. The other half is 777heaven Records, an independent label with 45 artists. Two rooms, one instinct: find the weak point, then fix it properly.</p>
+      <p class="statement">I test web apps and Android builds, mostly in labs and always with permission. No certificates yet, just a lot of practice and repos you can read. The other half of my week goes to 777heaven Records, a 45-artist independent label in Manila.</p>
 
       <dl class="spec">
         <div><dt>Name</dt><dd>Roje Alasdair Evangelista</dd></div>
@@ -90,13 +90,13 @@
         <div><dt>Scope</dt><dd>Web apps · Android</dd></div>
         <div><dt>Label</dt><dd>777heaven Records</dd></div>
         <div><dt>Base</dt><dd>Manila, PH</dd></div>
-        <div><dt>Certified</dt><dd>Not yet — self-taught</dd></div>
+        <div><dt>Certified</dt><dd>Not yet / self-taught</dd></div>
       </dl>
     </div>
 
     <div class="hero-foot">
       <a class="arrow-link" href="#work">Selected work <span aria-hidden="true">↓</span></a>
-      <span class="hero-note mono">10 projects / 45 artists</span>
+      <span class="hero-note mono">[ 10 PROJECTS ] · [ 45 ARTISTS ]</span>
     </div>
   </section>
 
@@ -105,7 +105,7 @@
     <header class="sec-head">
       <span class="sec-num">01</span>
       <h2>Work</h2>
-      <p class="sec-meta">Security, safety, sound<br>2024 — 2026</p>
+      <p class="sec-meta">Case files 01 / 10<br>Sorted newest first</p>
     </header>
 
     <div class="filters" role="group" aria-label="Filter projects">
@@ -115,58 +115,68 @@
       <button type="button" class="filter" data-filter="sound" aria-pressed="false">Sound <span>02</span></button>
     </div>
 
+    <div class="ledger-head" aria-hidden="true">
+      <span>No.</span><span>Project</span><span>Summary</span><span>Type</span><span>Stack</span><span></span>
+    </div>
+
     <ol class="ledger" id="ledger">
-      <li class="row" data-cat="safety">
-        <a href="https://github.com/AlasdairDev/alarma-app" target="_blank" rel="noopener">
-          <span class="r-no">01</span>
-          <span class="r-title">Alarma</span>
-          <span class="r-desc">Commuter-safety app with adaptive alarms and one-tap emergency SOS. Capstone.</span>
-          <span class="r-tags">Flutter / Android</span>
-          <span class="r-arrow" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li class="row" data-cat="safety">
-        <a href="https://github.com/AlasdairDev/navalert" target="_blank" rel="noopener">
-          <span class="r-no">02</span>
-          <span class="r-title">NavAlert</span>
-          <span class="r-desc">Offline commute monitoring and personal safety for Metro Manila routes.</span>
-          <span class="r-tags">Flutter / Offline</span>
-          <span class="r-arrow" aria-hidden="true">↗</span>
-        </a>
-      </li>
       <li class="row" data-cat="security">
         <a href="https://github.com/AlasdairDev/project-n3rve" target="_blank" rel="noopener">
-          <span class="r-no">03</span>
+          <span class="r-no">01</span>
           <span class="r-title">n3rve</span>
           <span class="r-desc">Wireless assessment suite — GPU WPA/WPA2 recovery, PMKID, PH ISP keys, reports.</span>
+          <span class="r-cat">Security</span>
           <span class="r-tags">Python / Hashcat</span>
           <span class="r-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
       <li class="row" data-cat="security">
         <a href="https://github.com/AlasdairDev/project-d1zzy" target="_blank" rel="noopener">
-          <span class="r-no">04</span>
+          <span class="r-no">02</span>
           <span class="r-title">D1zzy Market</span>
           <span class="r-desc">Privacy-first marketplace on Tor — signed listings, E2E chat, full threat model.</span>
+          <span class="r-cat">Security</span>
           <span class="r-tags">FastAPI / Tor</span>
           <span class="r-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
       <li class="row" data-cat="security">
         <a href="https://github.com/AlasdairDev/whxrl" target="_blank" rel="noopener">
-          <span class="r-no">05</span>
+          <span class="r-no">03</span>
           <span class="r-title">Whxrl</span>
           <span class="r-desc">Pocket DNS sinkhole on an M5Stick — network-wide ad and tracker blocking.</span>
+          <span class="r-cat">Security</span>
           <span class="r-tags">Hardware / DNS</span>
+          <span class="r-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      <li class="row" data-cat="safety">
+        <a href="https://github.com/AlasdairDev/alarma-app" target="_blank" rel="noopener">
+          <span class="r-no">04</span>
+          <span class="r-title">Alarma</span>
+          <span class="r-desc">Commuter-safety app with adaptive alarms and one-tap emergency SOS. Capstone.</span>
+          <span class="r-cat">Safety</span>
+          <span class="r-tags">Flutter / Android</span>
           <span class="r-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
       <li class="row" data-cat="security">
         <a href="https://github.com/AlasdairDev/777-HashHarden" target="_blank" rel="noopener">
-          <span class="r-no">06</span>
+          <span class="r-no">05</span>
           <span class="r-title">777-HashHarden</span>
           <span class="r-desc">Zero-trust gateway — magic-byte and SHA-256 integrity checks before release.</span>
+          <span class="r-cat">Security</span>
           <span class="r-tags">Python / SHA-256</span>
+          <span class="r-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      <li class="row" data-cat="security">
+        <a href="https://github.com/AlasdairDev/WUBlock" target="_blank" rel="noopener">
+          <span class="r-no">06</span>
+          <span class="r-title">WUBlock</span>
+          <span class="r-desc">Hard-blocks forced Windows updates through layered system changes.</span>
+          <span class="r-cat">Security</span>
+          <span class="r-tags">Windows / Utility</span>
           <span class="r-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
@@ -175,38 +185,47 @@
           <span class="r-no">07</span>
           <span class="r-title">DormBound</span>
           <span class="r-desc">Network tuning for dense dormitory Wi-Fi — stability and throughput.</span>
+          <span class="r-cat">Security</span>
           <span class="r-tags">Networking</span>
-          <span class="r-arrow" aria-hidden="true">↗</span>
-        </a>
-      </li>
-      <li class="row" data-cat="security">
-        <a href="https://github.com/AlasdairDev/WUBlock" target="_blank" rel="noopener">
-          <span class="r-no">08</span>
-          <span class="r-title">WUBlock</span>
-          <span class="r-desc">Hard-blocks forced Windows updates through layered system changes.</span>
-          <span class="r-tags">Windows / Utility</span>
           <span class="r-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
       <li class="row" data-cat="sound">
         <a href="https://github.com/AlasdairDev/777hvnrx-pitchingform" target="_blank" rel="noopener">
-          <span class="r-no">09</span>
+          <span class="r-no">08</span>
           <span class="r-title">777HVN Pitch Portal</span>
           <span class="r-desc">Secure pitch and document submission for artist and band rosters.</span>
+          <span class="r-cat">Sound</span>
           <span class="r-tags">Web / Forms</span>
           <span class="r-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
+      <li class="row" data-cat="safety">
+        <a href="https://github.com/AlasdairDev/navalert" target="_blank" rel="noopener">
+          <span class="r-no">09</span>
+          <span class="r-title">NavAlert</span>
+          <span class="r-desc">Offline commute monitoring and personal safety for Metro Manila routes.</span>
+          <span class="r-cat">Safety</span>
+          <span class="r-tags">Flutter / Offline</span>
+          <span class="r-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
       <li class="row" data-cat="sound">
-        <a href="https://github.com/AlasdairDev/777heaven-records" target="_blank" rel="noopener">
+        <a href="https://777heavenrecords.studio/" target="_blank" rel="noopener">
           <span class="r-no">10</span>
           <span class="r-title">777heaven Records</span>
           <span class="r-desc">Flagship label platform — roster, EPKs and the full brand identity.</span>
+          <span class="r-cat">Sound</span>
           <span class="r-tags">Web / Platform</span>
           <span class="r-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
     </ol>
+
+    <p class="ledger-foot">
+      <span>All public repositories</span>
+      <a href="https://github.com/AlasdairDev" target="_blank" rel="noopener">All repos on GitHub <span aria-hidden="true">↗</span></a>
+    </p>
   </section>
 
   <!-- ═══ LABEL — inverted spread ═══ -->
@@ -219,7 +238,7 @@
 
     <div class="label-grid">
       <div class="label-copy">
-        <p class="label-h">The Fool's Journey —<br><em>told through sound.</em></p>
+        <p class="label-h">The Fool's Journey<br><em>told through sound.</em></p>
         <blockquote>“The music was always here. The support wasn't.”</blockquote>
         <p class="label-body">Independent, non-mainstream, Manila. Forty-five artists and bands, distributed through ONErpm, self-released and self-owned since 2024.</p>
 
@@ -245,7 +264,7 @@
           <text font-size="10" letter-spacing="4.2" fill="currentColor" font-family="ui-monospace, monospace">
             <textPath href="#sealPath" startOffset="4">777HEAVEN RECORDS · MANILA · 33⅓ RPM · EST 2024 ·</textPath>
           </text>
-          <text x="120" y="129" text-anchor="middle" font-size="42" fill="var(--accent)" font-family="'Instrument Serif', Georgia, serif">777</text>
+          <text x="120" y="128" text-anchor="middle" font-size="40" font-weight="800" fill="var(--accent)" font-family="'Archivo', system-ui, sans-serif">777</text>
           <text x="120" y="147" text-anchor="middle" font-size="7.5" letter-spacing="3" fill="currentColor" font-family="ui-monospace, monospace">RECORDS</text>
         </svg>
         <p class="seal-cap">Cat. 777-HVN-001 <span aria-hidden="true">/</span> 33⅓ RPM</p>
@@ -273,18 +292,18 @@
     <header class="sec-head">
       <span class="sec-num">03</span>
       <h2>About</h2>
-      <p class="sec-meta">Operator, not an agency<br>Available from 2026</p>
+      <p class="sec-meta">Scope: web + android<br>Self-taught</p>
     </header>
 
     <div class="about-grid">
       <div class="bio">
-        <p class="bio-lead">BSIT at PUP Manila. Networks are the foundation; offensive security is the direction.</p>
-        <p>I learn by building — usually on Linux, usually in a terminal. I would rather show a working repository than a list of buzzwords, which is why most of this page is links to things that run.</p>
-        <p>777heaven Records is the other half. I started it in 2024 because the music was there and the support wasn't. Forty-five artists later, the instinct is unchanged: find what's missing, build it, keep it clean.</p>
+        <p class="bio-lead">I study BSIT at PUP Manila. Networks came first, then web apps and Android.</p>
+        <p>Most of what I know came from breaking my own setups and rebuilding them until they worked. Class gave me the fundamentals. The rest came from reading docs, watching traffic in Wireshark, and refusing to leave a half-finished project alone.</p>
+        <p>777heaven Records started in 2024. Manila has plenty of bedroom artists. It also has plenty of people happy to take a percentage. The label exists so the artists keep theirs. Forty-five artists and bands are on the roster now.</p>
 
         <div class="cert">
           <span class="cert-k">Certifications</span>
-          <p>None yet. Self-taught, tested in a lab or under written permission. A certificate is a hiring filter, not a licence to practise. The work is the evidence, and the next box is on the list.</p>
+          <p>No certificates yet. I test in a lab, on hardware I own, or with written permission, and I write down what I find. A cert helps with hiring filters. It doesn't tell you how someone works, so I'd rather show the repos and add the cert when it's done.</p>
         </div>
       </div>
 
@@ -293,7 +312,8 @@
           <tr><th>Studying</th><td>BSIT · PUP Manila</td></tr>
           <tr><th>Focus</th><td>Offensive security</td></tr>
           <tr><th>Scope</th><td>Web apps · Android</td></tr>
-          <tr><th>Security</th><td>Nmap · Wireshark · Metasploit · Burp</td></tr>
+          <tr><th>Network</th><td>Nmap · Wireshark · Metasploit · Burp Suite</td></tr>
+          <tr><th>Android</th><td>adb · jadx · apktool · Frida · MobSF</td></tr>
           <tr><th>Systems</th><td>Linux · Python · Bash · MySQL</td></tr>
           <tr><th>Web</th><td>HTML · CSS · JavaScript · WebGL</td></tr>
           <tr><th>Running</th><td>777heaven Records</td></tr>
@@ -310,17 +330,17 @@
         <article>
           <span class="p-no">a</span>
           <h4>Web applications</h4>
-          <p>Recon, authentication and session logic, access control, input handling. OWASP-aligned, written up like an engagement.</p>
+          <p>Login flows, session handling, access checks, and the input fields everyone forgets. Findings get written up the way an engagement report expects.</p>
         </article>
         <article>
           <span class="p-no">b</span>
           <h4>Android</h4>
-          <p>Static and dynamic review of app builds — manifest, storage, transport, authentication flows.</p>
+          <p>Static pass with jadx and apktool, then dynamic work with Frida and MobSF. Manifest, local storage, traffic, auth.</p>
         </article>
         <article>
           <span class="p-no">c</span>
           <h4>Networks &amp; wireless</h4>
-          <p>Nmap, Wireshark, WPA handshakes, segmentation. n3rve is where most of this lives.</p>
+          <p>Nmap and Wireshark, plus WPA handshakes on the wireless side. n3rve came out of that.</p>
         </article>
       </div>
     </div>
@@ -331,10 +351,10 @@
     <header class="sec-head">
       <span class="sec-num">04</span>
       <h2>Contact</h2>
-      <p class="sec-meta">Two doors, both open</p>
+      <p class="sec-meta">Channels: 02<br>Open</p>
     </header>
 
-    <p class="contact-lede">Student, not a startup — but serious about the work. Security goes to LinkedIn. Music goes to the demo form.</p>
+    <p class="contact-lede">Student, not a startup, but serious about the work. Security goes to LinkedIn. Music goes to the demo form.</p>
 
     <ul class="doors">
       <li>
@@ -360,6 +380,8 @@
       <li><a href="https://777heavenrecords.studio/" target="_blank" rel="noopener">The label ↗</a></li>
       <li><a href="https://www.instagram.com/777hvnrx" target="_blank" rel="noopener">Instagram ↗</a></li>
     </ul>
+
+    <p class="disclosure">Found a security issue on this site? <a href="https://www.linkedin.com/in/roje-alasdair-evangelista-00630b291/" target="_blank" rel="noopener">Report it on LinkedIn ↗</a></p>
   </section>
 
   <!-- ═══ FAQ ═══ -->
@@ -367,7 +389,7 @@
     <header class="sec-head">
       <span class="sec-num">05</span>
       <h2>FAQ</h2>
-      <p class="sec-meta">Plain answers</p>
+      <p class="sec-meta">Entries: 05<br>Updated 2026</p>
     </header>
 
     <div class="faq">
@@ -401,8 +423,12 @@
       <span>Manila, Philippines</span>
     </div>
     <div class="col-row">
-      <span>Set in Instrument Serif and system sans</span>
-      <span>Built with HTML, CSS and 2 KB of JS — no frameworks</span>
+      <span>Set in Archivo and system mono</span>
+      <span>Built with HTML, CSS and 2 KB of JS, no frameworks</span>
+    </div>
+    <div class="col-row">
+      <span>No trackers. No cookies. No analytics.</span>
+      <span>Testing only on systems I own or with written permission.</span>
     </div>
   </footer>
 
