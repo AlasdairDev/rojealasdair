@@ -321,6 +321,8 @@ h1 em {
 
 /* ── SECTIONS ───────────────────────────────────────────────── */
 .sec {
+  display:flex; flex-direction:column;
+  min-height:100vh;
   padding:clamp(44px, 6vw, 84px) var(--pad) clamp(40px, 5vw, 64px);
   border-bottom:1px solid var(--line);
 }
@@ -587,10 +589,10 @@ blockquote {
 .btn.solid:hover { background:var(--accent); border-color:var(--accent); color:#0a0a0a; }
 
 .seal-wrap { display:flex; flex-direction:column; align-items:center; }
-.seal {
-  width:clamp(210px, 24vw, 300px);
+.label-logo {
+  width:100%;
+  max-width:380px;
   height:auto;
-  color:var(--fg);
 }
 .seal-cap {
   margin-top:14px;
@@ -892,7 +894,7 @@ blockquote {
   .rail { display:none; }
   .mbar { display:flex; }
   .hero { min-height:calc(100vh - 58px); }
-  .sec { scroll-margin-top:58px; }
+  .sec { min-height:calc(100svh - 58px); scroll-margin-top:58px; }
 
   .hero-cols { grid-template-columns:1fr; gap:26px; }
   .spec { max-width:560px; }
@@ -937,7 +939,6 @@ blockquote {
   .label-h { font-size:30px; }
   .blockquote, blockquote { font-size:17px; }
   .label-stats { grid-template-columns:1fr 1fr; gap:16px; }
-  .seal { width:200px; }
 
   .door-t { font-size:32px; }
   .contact-lede { font-size:19px; }
