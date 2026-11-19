@@ -578,7 +578,7 @@ blockquote {
   text-transform:uppercase;
   color:var(--muted);
 }
-.creed li::before { content:'—'; color:var(--accent); margin-right:7px; }
+.creed li::before { content:'/'; color:var(--accent); margin-right:7px; }
 
 .label-actions { display:flex; flex-wrap:wrap; align-items:center; gap:16px 24px; }
 
