@@ -1,32 +1,33 @@
 /* ══════════════════════════════════════════════════════════════
    Roje Alasdair Evangelista — behaviour
-   Menu, project filter, year. No canvas, no loops, no observers.
+   Drawer, section index, project filter, year.
+   No canvas, no loops, no scroll handlers — one observer.
    ══════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  /* ── MOBILE MENU ───────────────────────────────────────────── */
-  var menuBtn = document.getElementById('menu');
-  var nav = document.getElementById('nav');
+  /* ── MOBILE DRAWER ─────────────────────────────────────────── */
+  var menuBtn = document.getElementById('menuBtn');
+  var drawer = document.getElementById('drawer');
 
   function closeMenu() {
-    document.body.classList.remove('nav-open');
+    document.body.classList.remove('menu-open');
     if (menuBtn) {
       menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.setAttribute('aria-label', 'Open menu');
+      menuBtn.textContent = 'Menu';
     }
   }
 
   if (menuBtn) {
     menuBtn.addEventListener('click', function () {
-      var open = document.body.classList.toggle('nav-open');
+      var open = document.body.classList.toggle('menu-open');
       menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menuBtn.textContent = open ? 'Close' : 'Menu';
     });
   }
 
-  if (nav) {
-    nav.addEventListener('click', function (e) {
+  if (drawer) {
+    drawer.addEventListener('click', function (e) {
       if (e.target.closest('a')) closeMenu();
     });
   }
@@ -36,12 +37,32 @@
   });
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 860) closeMenu();
+    if (window.innerWidth > 1080) closeMenu();
   });
 
-  /* ── FILTER ────────────────────────────────────────────────── */
+  /* ── SECTION INDEX (scrollspy) ─────────────────────────────── */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+
+  function setActive(id) {
+    navLinks.forEach(function (a) {
+      a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+    });
+  }
+
+  if ('IntersectionObserver' in window && sections.length) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-22% 0px -68% 0px', threshold: 0 });
+
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+
+  /* ── PROJECT FILTER ────────────────────────────────────────── */
   var filters = Array.prototype.slice.call(document.querySelectorAll('.filter'));
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
 
   filters.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -53,8 +74,8 @@
         b.setAttribute('aria-pressed', String(on));
       });
 
-      cards.forEach(function (card) {
-        card.classList.toggle('is-hidden', key !== 'all' && card.getAttribute('data-cat') !== key);
+      rows.forEach(function (row) {
+        row.classList.toggle('is-hidden', key !== 'all' && row.getAttribute('data-cat') !== key);
       });
     });
   });
