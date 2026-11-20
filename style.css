@@ -304,6 +304,12 @@ h1 em {
   white-space:nowrap;
 }
 .spec dd { font-size:12.5px; text-align:right; }
+.spec dd a, .cert p a {
+  border-bottom:1px solid var(--line);
+  padding-bottom:1px;
+  transition:color .16s ease, border-color .16s ease;
+}
+.spec dd a:hover, .cert p a:hover { color:var(--accent); border-bottom-color:var(--accent); }
 
 .hero-foot {
   margin-top:auto;
