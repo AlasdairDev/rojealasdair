@@ -168,7 +168,14 @@ svg { display:block; }
 }
 .mbar .monogram { max-width:none; font-size:14px; letter-spacing:-.02em; }
 @media (max-width:480px) { .mbar .monogram { font-size:12px; } }
+
+@media (max-width:400px) {
+  .statement { font-size:16px; }
+  .label-h { font-size:26px; }
+}
 .menu-btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:44px; min-height:44px;
   font-family:var(--mono);
   font-size:9.5px;
   letter-spacing:.18em;
@@ -243,7 +250,7 @@ section { scroll-margin-top:0; }
   scroll-margin-top:58px;
 }
 .hero-meta {
-  display:flex; justify-content:space-between; gap:20px;
+  display:flex; justify-content:flex-end; gap:20px;
   font-family:var(--mono);
   font-size:9.5px;
   letter-spacing:.16em;
@@ -920,6 +927,10 @@ blockquote {
 @media (max-width:1100px) {
   .ledger-head, .r-cat, .r-date { display:none; }
   .row a { grid-template-columns:34px minmax(0, 1.15fr) minmax(0, 1.05fr) 132px 14px; }
+}
+
+@media (max-width:1080px) {
+  .filter { padding:8px 0; }
 }
 
 @media (max-width:900px) {
