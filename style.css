@@ -533,6 +533,7 @@ h1 em {
 
 /* ── LIGHT LABEL SPREAD ─────────────────────────────────────── */
 .light {
+  justify-content:space-between;
   --bg:#151514;
   --fg:#ececea;
   --muted:#c6c3ba;
@@ -812,6 +813,27 @@ blockquote {
   transition:color .16s ease, transform .16s ease;
 }
 .doors a:hover .door-a { color:var(--accent); transform:translate(3px,-3px); }
+
+.sec-footline {
+  margin-top:auto;
+  padding-top:16px;
+  border-top:1px solid var(--line-soft);
+  display:flex; align-items:center; flex-wrap:wrap;
+  gap:6px 10px;
+  font-family:var(--mono);
+  font-size:9.5px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--dim);
+}
+.sec-footline a {
+  color:var(--muted);
+  border-bottom:1px solid var(--line-soft);
+  padding-bottom:2px;
+  transition:color .16s ease, border-color .16s ease;
+}
+.sec-footline a:hover { color:var(--accent); border-bottom-color:var(--accent); }
+.sec-footline .led { margin-right:2px; }
 
 .contact-links {
   display:flex; flex-wrap:wrap;
