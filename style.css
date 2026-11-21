@@ -1121,6 +1121,33 @@ blockquote {
 .label-socials a, .seal-cap, .door-k, .contact-links a, .disclosure,
 .f-no, .col-row { font-weight:600; }
 
+/* ── MOBILE / TABLET DENSITY ────────────────────────────────── */
+@media (max-width:1080px) {
+  .sec { min-height:auto; }
+}
+
+@media (max-width:640px) {
+  .spec { display:none; }
+  .statement { font-size:16px; line-height:1.62; }
+
+  .hero { padding-top:26px; }
+  .hero-foot { padding-top:26px; }
+  .sec { padding-top:38px; padding-bottom:36px; }
+  .sec-head { margin-bottom:22px; }
+
+  .row a { padding:12px 0; }
+  .r-desc { font-size:13px; line-height:1.5; }
+  .r-tags { display:none; }
+
+  .bio-lead { font-size:22px; line-height:1.28; }
+  .bio > p:not(.bio-lead) { font-size:14px; }
+  .practice article p { font-size:13.5px; }
+  .label-body { font-size:14px; }
+  .f-a p { font-size:14px; }
+  .colophon { gap:8px; }
+  .col-row { font-size:9px; }
+}
+
 /* ── MOTION / PRINT ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior:auto; }
