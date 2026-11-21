@@ -1,18 +1,16 @@
-/* ══════════════════════════════════════════════════════════════
-   Roje Alasdair Evangelista — behaviour
-   Drawer, section index, project filter, year.
-   No canvas, no loops, no scroll handlers — one observer.
-   ══════════════════════════════════════════════════════════════ */
+/*
+  Drawer, section index, project filter and year.
+*/
 (function () {
   'use strict';
 
-  /* Clickjacking fallback for hosts that cannot send frame headers */
+  /* Leave the frame if the host cannot send frame headers. */
   if (window.top !== window.self) {
     try { window.top.location = window.self.location; }
-    catch (err) { document.documentElement.setAttribute('hidden', ''); }
+    catch { document.documentElement.setAttribute('hidden', ''); }
   }
 
-  /* ── MOBILE DRAWER ─────────────────────────────────────────── */
+  /* Mobile drawer */
   var menuBtn = document.getElementById('menuBtn');
   var drawer = document.getElementById('drawer');
 
@@ -46,7 +44,7 @@
     if (window.innerWidth > 1080) closeMenu();
   });
 
-  /* ── SECTION INDEX (scrollspy) ─────────────────────────────── */
+  /* Section index */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
   var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
 
@@ -66,7 +64,7 @@
     sections.forEach(function (s) { spy.observe(s); });
   }
 
-  /* ── PROJECT FILTER ────────────────────────────────────────── */
+  /* Project filter */
   var filters = Array.prototype.slice.call(document.querySelectorAll('.filter'));
   var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
 
@@ -86,7 +84,7 @@
     });
   });
 
-  /* ── YEAR ──────────────────────────────────────────────────── */
+  /* Year */
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();
