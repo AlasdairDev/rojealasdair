@@ -537,6 +537,8 @@ h1 em {
 }
 .ledger-foot a:hover { color:var(--fg); border-bottom-color:var(--accent); }
 
+.ledger-more { display:none; }
+
 /* 777heaven Records */
 
 .light {
@@ -1043,13 +1045,18 @@ blockquote {
 @media (max-width:820px) {
   .sec-head { grid-template-columns:auto minmax(0, 1fr); }
   .sec-meta { grid-column:1 / -1; text-align:left; padding-top:4px; }
+  .sec-meta:not(.link) { display:none; }
   .practice-grid { grid-template-columns:1fr; }
   .practice-grid article { padding:18px 0 0; }
   .practice-grid article + article { padding-left:0; border-left:0; border-top:1px solid var(--line-soft); }
+
+  .r-tags { display:none; }
+  .row a { grid-template-columns:34px minmax(0, 1.15fr) minmax(0, 1.05fr) 14px; }
 }
 
 @media (max-width:640px) {
   .spec { display:none; }
+  .hero-note { display:none; }
 
   h1 { font-size:clamp(48px, 16vw, 78px); }
   h1 span:last-child { padding-left:0; }
@@ -1072,12 +1079,33 @@ blockquote {
   .r-arrow { grid-column:3; grid-row:1; align-self:start; }
   .r-no { grid-row:1; }
 
+  .ledger.is-collapsed:not(.is-filtered) .row:nth-child(n+6) { display:none; }
+  .ledger-more {
+    display:block;
+    width:100%;
+    padding:13px 0;
+    border-bottom:1px solid var(--line-soft);
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    text-align:left;
+    color:var(--dim);
+  }
+  .ledger-more:hover { color:var(--fg); }
+  .ledger.is-filtered + .ledger-more { display:none; }
+
   .label-h { font-size:30px; }
   .label-body { font-size:14px; }
+  .label-stats { display:none; }
 
   .bio-lead { font-size:22px; line-height:1.28; }
   .bio > p:not(.bio-lead) { font-size:14px; }
-  .practice article p { font-size:13.5px; }
+  .bio > p:not(.bio-lead) + p { display:none; }
+  .spec-table tr.tools { display:none; }
+  .practice-grid article { padding-top:14px; }
+  .p-no { display:none; }
+  .practice article p { display:none; }
 
   .door-t { font-size:32px; }
   .contact-lede { font-size:19px; }

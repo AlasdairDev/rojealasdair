@@ -59,8 +59,20 @@
     sections.forEach(function (s) { spy.observe(s); });
   }
 
+  var ledger = document.getElementById('ledger');
+  var ledgerMore = document.getElementById('ledgerMore');
   var filters = Array.prototype.slice.call(document.querySelectorAll('.filter'));
   var rows = Array.prototype.slice.call(document.querySelectorAll('.row'));
+
+  if (ledger && ledgerMore) {
+    var totalRows = ledger.querySelectorAll('.row').length;
+    ledgerMore.textContent = 'Show all ' + totalRows + ' projects';
+    ledgerMore.addEventListener('click', function () {
+      var collapsed = ledger.classList.toggle('is-collapsed');
+      ledgerMore.setAttribute('aria-expanded', String(!collapsed));
+      ledgerMore.textContent = collapsed ? 'Show all ' + totalRows + ' projects' : 'Show fewer projects';
+    });
+  }
 
   filters.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -71,6 +83,8 @@
         b.classList.toggle('is-on', on);
         b.setAttribute('aria-pressed', String(on));
       });
+
+      if (ledger) ledger.classList.toggle('is-filtered', key !== 'all');
 
       rows.forEach(function (row) {
         row.classList.toggle('is-hidden', key !== 'all' && row.getAttribute('data-cat') !== key);
